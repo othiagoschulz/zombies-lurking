@@ -17,7 +17,6 @@ public class AtaqueZumbi : MonoBehaviour
             scriptPersonagem player = col.GetComponent<scriptPersonagem>();
             if (player != null && player.vidaAtual > 0)
             {                
-                player.vidaAtual -= dano;
                 podeCausarDano = false; // impede múltiplos danos no mesmo ataque
             }
         }

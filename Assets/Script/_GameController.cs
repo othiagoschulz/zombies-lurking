@@ -8,8 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class _GameController : MonoBehaviour
 {
-    private transicao transicao;
-    public Animator animPersonagem;
+    private transicao transicao;    
     public int idioma;
     public string[] idiomaFolder;
     private pauseScript pauseScript;
@@ -99,9 +98,7 @@ public class _GameController : MonoBehaviour
         transicao = FindObjectOfType(typeof(transicao)) as transicao;
         pauseScript = FindObjectOfType(typeof(pauseScript)) as pauseScript;
         invScript = FindObjectOfType(typeof(invScript)) as invScript;
-        scriptPersonagem = FindObjectOfType(typeof(scriptPersonagem)) as scriptPersonagem;
-
-        animPersonagem = FindObjectOfType<scriptPersonagem>().GetComponent<Animator>();
+        scriptPersonagem = FindObjectOfType(typeof(scriptPersonagem)) as scriptPersonagem;        
 
         if (FindObjectsOfType<_GameController>().Length > 1)   
         {
@@ -147,14 +144,14 @@ public class _GameController : MonoBehaviour
         {
             morto = true;
             vidaAtual = 0;
-            animPersonagem.Play("Morte");
+            scriptPersonagem.animacaoPersonagem.Play("Morte");
 
             scriptPersonagem.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero; // ZERA A VELOCIDADE DO PERSONAGEM 
 
             scriptPersonagem.enabled = false;   // DESABILITA O SCRIPT DO PERSONAGEM PARA ELE NÃO SE MOVER MAIS
 
             StartCoroutine(FimdeJogo());
-        }
+        }        
 
         PiscarTexto();
     }
@@ -216,15 +213,6 @@ public class _GameController : MonoBehaviour
         tempcor = tempcor.Replace("fimngt", "</b>");
 
         return tempcor;
-    }
-
-    public void TomarDano(int dano)
-    {
-        if (morto) return;
-
-        vidaAtual -= dano;
-
-        animPersonagem.SetTrigger("Dano");              
     }
 
     public void ZumbiMorto()

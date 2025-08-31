@@ -9,12 +9,12 @@ public class scriptPersonagem : MonoBehaviour
     private _GameController _GameController;
     private IAzumbi IAzumbi;
     private armaInfo armaInfo;
-    private Animator animacaoPersonagem;
-    private Rigidbody2D personagemRb;
+    public Animator animacaoPersonagem;
+    public Rigidbody2D personagemRb;
     public Transform chaoCheck;              //DETECTA SE O PERSONAGEM ESTÁ EM CIMA DE ALGO
     public LayerMask oQueEChao;              //INDICA O QUE É CHAO PARA O TESTE DO CHAO
 
-    private bool emDano;
+    public bool emDano;
 
     public int vidaMax, vidaAtual;
 
@@ -71,6 +71,13 @@ public class scriptPersonagem : MonoBehaviour
 
     void FixedUpdate()
     {     //TAXA DE ATUALIZAÇÃO FIXA 0.02, CLASSE PARA CRIAR MOVIMENTOS FÍSICOS
+        if (emDano)
+        {
+            personagemRb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+
         if (pauseScript.estadoAtual != maquinaEstado.GAMEPLAY)
         {  //SE O ESTADO DE JOGO FOR QUALQUER UM QUE N SEJA GAMEPLAY, ELE PARA DE EXECUTAR O COMANDO E O CODIGO ABAIXO N É EXECUTADO
             return;
@@ -82,103 +89,113 @@ public class scriptPersonagem : MonoBehaviour
 
     }
 
-void Update()
-{
-    if (pauseScript.estadoAtual == maquinaEstado.DIALOGO)
+    void Update()
     {
-        personagemRb.linearVelocity = new Vector2(0, personagemRb.linearVelocity.y);
-        animacaoPersonagem.SetInteger("idAnimacao", 0);
-        if (Input.GetButtonDown("Fire1"))
+        AnimatorStateInfo current = animacaoPersonagem.GetCurrentAnimatorStateInfo(0);
+        if (emDano)
         {
-            objetoInteracao.SendMessage("falar", SendMessageOptions.DontRequireReceiver);
+            // Interrompe ataque e desativa armas/arcos ao entrar em dano
+            if (atacando)
+            {
+                atacando = false;
+                foreach (GameObject o in armas) o.SetActive(false);
+                foreach (GameObject o in arcos) o.SetActive(false);
+            }
+            // Quando sair da animação de dano, restaura velocidade
+            if (!current.IsTag("Dano"))
+            {
+                emDano = false;
+                StartCoroutine(RestaurarVelocidade());
+            }
+            return;
         }
-        return;
-    }
 
-    if (pauseScript.estadoAtual != maquinaEstado.GAMEPLAY)
-    {
-        return;
-    }
+        if (pauseScript.estadoAtual == maquinaEstado.DIALOGO)
+        {
+            personagemRb.linearVelocity = new Vector2(0, personagemRb.linearVelocity.y);
+            animacaoPersonagem.SetInteger("idAnimacao", 0);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                objetoInteracao.SendMessage("falar", SendMessageOptions.DontRequireReceiver);
+            }
+            return;
+        }
 
-    // Atualiza se está em dano
-    AnimatorStateInfo current = animacaoPersonagem.GetCurrentAnimatorStateInfo(0);
-    AnimatorStateInfo next = animacaoPersonagem.GetNextAnimatorStateInfo(0);
-    emDano = current.IsTag("Dano") || next.IsTag("Dano");
+        if (pauseScript.estadoAtual != maquinaEstado.GAMEPLAY)
+        {
+            return;
+        } 
 
-    // Se estiver em dano, bloqueia movimento e ataques
-    if (emDano)
-        return;
+        h = Input.GetAxisRaw("Horizontal");
+        v = Input.GetAxisRaw("Vertical");
 
-    h = Input.GetAxisRaw("Horizontal");
-    v = Input.GetAxisRaw("Vertical");
+        if (h > 0 && olhandoEsquerda && !atacando)
+            flip();
+        else if (h < 0 && !olhandoEsquerda && !atacando)
+            flip();
 
-    if (h > 0 && olhandoEsquerda && !atacando)
-        flip();
-    else if (h < 0 && !olhandoEsquerda && !atacando)
-        flip();
-
-    // Atualiza animação de movimento
-    if (v < 0)
-    {
-        idAnimacao = 2;
-        if (Chao) h = 0;
-    }
-    else if (h != 0)
-        idAnimacao = 1;
-    else
-        idAnimacao = 0;
-
-    // Ataques
-    if (Input.GetButtonDown("Fire1") && v >= 0 && !atacando)
-    {
-        if (objetoInteracao == null)
-            animacaoPersonagem.SetTrigger("ataque");
+        // Atualiza animação de movimento
+        if (v < 0)
+        {
+            idAnimacao = 2;
+            if (Chao) h = 0;
+        }
+        else if (h != 0)
+            idAnimacao = 1;
         else
+            idAnimacao = 0;
+
+        // Ataques    
+        if (Input.GetButtonDown("Fire1") && v >= 0 && !atacando)
         {
-            if (objetoInteracao.tag == "porta")
-                objetoInteracao.GetComponent<porta>().tPersonagem = this.transform;
+            if (objetoInteracao == null)
+                animacaoPersonagem.SetTrigger("ataque");
+            else
+            {
+                if (objetoInteracao.tag == "porta")
+                    objetoInteracao.GetComponent<porta>().tPersonagem = this.transform;
 
-            objetoInteracao.SendMessage("interacao", SendMessageOptions.DontRequireReceiver);
+                objetoInteracao.SendMessage("interacao", SendMessageOptions.DontRequireReceiver);
+            }
         }
-    }
 
-    // Pulo
+        // Pulo
         if (Input.GetButtonDown("Jump") && Chao)
             personagemRb.AddForce(new Vector2(0, forcaPulo));
 
-    // Troca de armas
-    if (Input.GetKeyDown(KeyCode.Alpha1))
-        trocarArma(0);
+        // Troca de armas
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            trocarArma(0);
 
-    if (atacando && Chao)
-        h = 0;
+        if (atacando && Chao)
+            h = 0;
 
-    // Colisores de agachar
-    if (v < 0 && Chao)
-    {
-        agachado.enabled = true;
-        emPe.enabled = false;
+        // Colisores de agachar
+        if (v < 0 && Chao)
+        {
+            agachado.enabled = true;
+            emPe.enabled = false;
+        }
+        else
+        {
+            agachado.enabled = false;
+            emPe.enabled = true;
+        }
+
+        // Atualiza parâmetros do Animator
+        animacaoPersonagem.SetBool("Chao", Chao);
+        animacaoPersonagem.SetInteger("idAnimacao", idAnimacao);
+        animacaoPersonagem.SetFloat("velocidadeY", personagemRb.linearVelocity.y);
+        animacaoPersonagem.SetFloat("idClasseArma", _GameController.idClasseArma[_GameController.idArmaAtual]);
+
+        // Atualiza flechas do arco
+        bool temFlechas = _GameController.qtdFlechas[_GameController.idFlechaEquipada] >= 1;
+        foreach (GameObject f in flechaArco)
+            f.SetActive(temFlechas);
+
+        // Interações
+        interagir();
     }
-    else
-    {
-        agachado.enabled = false;
-        emPe.enabled = true;
-    }
-
-    // Atualiza parâmetros do Animator
-    animacaoPersonagem.SetBool("Chao", Chao);
-    animacaoPersonagem.SetInteger("idAnimacao", idAnimacao);
-    animacaoPersonagem.SetFloat("velocidadeY", personagemRb.linearVelocity.y);
-    animacaoPersonagem.SetFloat("idClasseArma", _GameController.idClasseArma[_GameController.idArmaAtual]);
-
-    // Atualiza flechas do arco
-    bool temFlechas = _GameController.qtdFlechas[_GameController.idFlechaEquipada] >= 1;
-    foreach (GameObject f in flechaArco)
-        f.SetActive(temFlechas);
-
-    // Interações
-    interagir();
-}
 
     void LateUpdate()
     {
@@ -344,5 +361,11 @@ void Update()
                 break;
         }
         _GameController.idArmaAtual = _GameController.idArma;
+    }
+    
+    IEnumerator RestaurarVelocidade()
+    {
+        yield return new WaitForSeconds(0.3f);
+        velocidade = 2f;
     }
 }

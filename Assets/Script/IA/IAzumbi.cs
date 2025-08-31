@@ -138,6 +138,20 @@ public class IAzumbi : MonoBehaviour
     {
         if (estadoInimigoAtual == estadoInimigo.ATACANDO && col.CompareTag("Player"))
         {
+            scriptPersonagem.emDano = true;
+
+            scriptPersonagem.animacaoPersonagem.ResetTrigger("ataque"); // FORÇA A SAÍDA DA ANIMAÇÃO DE ATAQUE
+
+            scriptPersonagem.animacaoPersonagem.Play("Dano"); // INICIA A ANIMAÇÃO DE DANO
+            scriptPersonagem.velocidade = 0;
+            scriptPersonagem.personagemRb.linearVelocity = Vector2.zero; // ZERA A VELOCIDADE DO PERSONAGEM            
+            
+            // Desativa armas e arcos para evitar bug visual
+            foreach (GameObject arma in scriptPersonagem.armas) // DESATIVA A ARMA AO SOFRER DANO
+                arma.SetActive(false);         
+
+            scriptPersonagem.atacando = false; // DESATIVA O ATAQUE AO SOFRER DANO
+
             _GameController.vidaAtual -= 1;
         }
     }
