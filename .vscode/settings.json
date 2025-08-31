@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Zombies Lurking.sln"
+    "dotnet.defaultSolution": "zombies-lurking.sln"
 }
