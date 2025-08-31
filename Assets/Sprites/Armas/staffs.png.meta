@@ -1,0 +1,1217 @@
+fileFormatVersion: 2
+guid: de7252f952e14a74a877f59455a3997a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7440546752563858597
+    second: staffs_0
+  - first:
+      213: -7461390936705696379
+    second: staffs_1
+  - first:
+      213: 3132286685215639721
+    second: staffs_2
+  - first:
+      213: -1000418288336766727
+    second: staffs_3
+  - first:
+      213: 175385020425189468
+    second: staffs_4
+  - first:
+      213: 2850489348650054323
+    second: staffs_5
+  - first:
+      213: -3220147537453589037
+    second: staffs_6
+  - first:
+      213: 5451518032225949699
+    second: staffs_7
+  - first:
+      213: -5069416660541559558
+    second: staffs_8
+  - first:
+      213: -8015108363999751706
+    second: staffs_9
+  - first:
+      213: 7720484189735457432
+    second: staffs_10
+  - first:
+      213: 1332557967006949262
+    second: staffs_11
+  - first:
+      213: -3614233887662092825
+    second: staffs_12
+  - first:
+      213: 1492754621213436866
+    second: staffs_13
+  - first:
+      213: -7692179400305652162
+    second: staffs_14
+  - first:
+      213: 3356224072636492180
+    second: staffs_15
+  - first:
+      213: 4061661855945805950
+    second: staffs_16
+  - first:
+      213: 6500246726730867025
+    second: staffs_17
+  - first:
+      213: -7377897875575840447
+    second: staffs_18
+  - first:
+      213: 6383919003637870264
+    second: staffs_19
+  - first:
+      213: -6178122336740363059
+    second: staffs_20
+  - first:
+      213: -2788262532978621015
+    second: staffs_21
+  - first:
+      213: -3090356739404938088
+    second: staffs_22
+  - first:
+      213: 3751555841671710127
+    second: staffs_23
+  - first:
+      213: -1930428229123158337
+    second: staffs_24
+  - first:
+      213: -3883717565958075826
+    second: staffs_25
+  - first:
+      213: 1640218437774588795
+    second: staffs_26
+  - first:
+      213: -7965692208530537075
+    second: staffs_27
+  - first:
+      213: 550205154588252014
+    second: staffs_28
+  - first:
+      213: 8996933293021267768
+    second: staffs_29
+  - first:
+      213: -8757365180782659960
+    second: staffs_30
+  - first:
+      213: -120529594282206544
+    second: staffs_31
+  - first:
+      213: 5831655617835262460
+    second: staffs_32
+  - first:
+      213: 568456955851748330
+    second: staffs_33
+  - first:
+      213: 6326422318821902020
+    second: staffs_34
+  - first:
+      213: 4682296250215326924
+    second: staffs_35
+  - first:
+      213: 6362076510786552849
+    second: staffs_36
+  - first:
+      213: 213993910583132606
+    second: staffs_37
+  - first:
+      213: -1427053811709226153
+    second: staffs_38
+  - first:
+      213: -2541699177604018290
+    second: staffs_39
+  - first:
+      213: -3854517432942459744
+    second: staffs_40
+  - first:
+      213: 6803039281737270047
+    second: staffs_41
+  - first:
+      213: -1757309222488651905
+    second: staffs_42
+  - first:
+      213: 3139796647816497460
+    second: staffs_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: staffs_0
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 894
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53beb6762eddb890800000000000000
+      internalID: -7440546752563858597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_1
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 897
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58d7657a970d37890800000000000000
+      internalID: -7461390936705696379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_2
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 897
+        width: 38
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a8c6f6052e187b20800000000000000
+      internalID: 3132286685215639721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_3
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 948
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f8f1e00edccd12f0800000000000000
+      internalID: -1000418288336766727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_4
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 897
+        width: 38
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c583e513fb71f6200800000000000000
+      internalID: 175385020425189468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_5
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 894
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b23256c5f8fe8720800000000000000
+      internalID: 2850489348650054323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_6
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 897
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dddab130ecbf43d0800000000000000
+      internalID: -3220147537453589037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_7
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 897
+        width: 35
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308d67554cea7ab40800000000000000
+      internalID: 5451518032225949699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_8
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 948
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc29f9f760d5a9b0800000000000000
+      internalID: -5069416660541559558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_9
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 897
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e15887a86d94c090800000000000000
+      internalID: -8015108363999751706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_10
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 927
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8929337377ba42b60800000000000000
+      internalID: 7720484189735457432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_11
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 927
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8fd01a29623e7210800000000000000
+      internalID: 1332557967006949262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_12
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 855
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edc8be9d69a7ddc0800000000000000
+      internalID: -3614233887662092825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_13
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 858
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cbef364b6457b410800000000000000
+      internalID: 1492754621213436866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_14
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 858
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e44302793ef3590800000000000000
+      internalID: -7692179400305652162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_15
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 858
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499ec141304b39e20800000000000000
+      internalID: 3356224072636492180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_16
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 855
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e70576930fbed5830800000000000000
+      internalID: 4061661855945805950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_17
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 858
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 151603b45f3853a50800000000000000
+      internalID: 6500246726730867025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_18
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 858
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1416131d8f07c9990800000000000000
+      internalID: -7377897875575840447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_19
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 858
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be63b6a28c389850800000000000000
+      internalID: 6383919003637870264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_20
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 654
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc43fa3c776e24aa0800000000000000
+      internalID: -6178122336740363059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_21
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 657
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a54745cff91e49d0800000000000000
+      internalID: -2788262532978621015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_22
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 657
+        width: 53
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 894c88e3be8dc15d0800000000000000
+      internalID: -3090356739404938088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_23
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 657
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa542e15924301430800000000000000
+      internalID: 3751555841671710127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_24
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 654
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbe4ab2e0cdb535e0800000000000000
+      internalID: -1930428229123158337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_25
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 657
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4acf1953734a1ac0800000000000000
+      internalID: -3883717565958075826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_26
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 657
+        width: 50
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7bb9999af933c610800000000000000
+      internalID: 1640218437774588795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_27
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 657
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85c070f32d247190800000000000000
+      internalID: -7965692208530537075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_28
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 615
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6752d84ca8b2a700800000000000000
+      internalID: 550205154588252014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_29
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 618
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8370b6689278bdc70800000000000000
+      internalID: 8996933293021267768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_30
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 618
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 886331f34c6977680800000000000000
+      internalID: -8757365180782659960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_31
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 618
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba13ebf8fac35ef0800000000000000
+      internalID: -120529594282206544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_32
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 615
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf16b7113e33ee050800000000000000
+      internalID: 5831655617835262460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_33
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 618
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3b4abe69093e700800000000000000
+      internalID: 568456955851748330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_34
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 618
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c68b748497fbc750800000000000000
+      internalID: 6326422318821902020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_35
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 618
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc46a37b1abdaf040800000000000000
+      internalID: 4682296250215326924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_36
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 414
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1140a4bf0e2aa4850800000000000000
+      internalID: 6362076510786552849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_37
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 417
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb18760f35248f200800000000000000
+      internalID: 213993910583132606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_38
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 417
+        width: 47
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75354bd7e16123ce0800000000000000
+      internalID: -1427053811709226153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_39
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 417
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8f820180121abcd0800000000000000
+      internalID: -2541699177604018290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_40
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 375
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a40aec11d0028ac0800000000000000
+      internalID: -3854517432942459744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_41
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 378
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f138af4ce20496e50800000000000000
+      internalID: 6803039281737270047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_42
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 378
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f77cb01a298cc97e0800000000000000
+      internalID: -1757309222488651905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: staffs_43
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 378
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43980147a6cc29b20800000000000000
+      internalID: 3139796647816497460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

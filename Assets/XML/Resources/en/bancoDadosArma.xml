@@ -1,0 +1,122 @@
+<Armas>
+	<arma atributo="nome">
+		<armas>
+			
+			<a>Sword A</a>
+			<a>Sword B</a>
+			<a>Sword C</a>
+			<a>Sword D</a>
+			<a>Sword E</a>
+			<a>Sword F</a>
+			<a>Sword G</a>
+			<a>Sword H</a>
+			<a>Sword I</a>
+			<a>Sword J</a>
+			<a>Ax A</a>
+			<a>Ax B</a>
+			<a>Ax C</a>
+			<a>Ax D</a>
+			<a>Ax E</a>
+		</armas>
+	</arma>
+
+	<arma atributo="icone">
+		<armas>
+			<a>EspadaA</a>
+			<a>EspadaB</a>
+			<a>EspadaC</a>
+			<a>EspadaD</a>
+			<a>EspadaE</a>
+			<a>EspadaF</a>
+			<a>EspadaG</a>
+			<a>EspadaH</a>
+			<a>EspadaI</a>
+			<a>EspadaJ</a>
+			<a>MachadoA</a>
+			<a>MachadoB</a>
+			<a>MachadoC</a>
+			<a>MachadoD</a>
+			<a>MachadoE</a>
+		</armas>
+	</arma>
+
+	<arma atributo="categoria">
+		<armas>
+			<a>Espada</a>
+			<a>Espada</a>
+			<a>Espada</a>
+			<a>Espada</a>
+			<a>Espada</a>
+			<a>Espada</a>
+			<a>Espada</a>
+			<a>Espada</a>
+			<a>Espada</a>
+			<a>Espada</a>
+			<a>Machado</a>
+			<a>Machado</a>
+			<a>Machado</a>
+			<a>Machado</a>
+			<a>Machado</a>
+		</armas>
+	</arma>
+
+	<arma atributo="danoMin">
+		<armas>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+		</armas>
+	</arma>
+
+	<arma atributo="danoMax">
+		<armas>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+			<a>1</a>
+		</armas>
+	</arma>
+
+	<arma atributo="tipoDano">
+		<armas>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+			<a>0</a>
+		</armas>
+	</arma>	
+</Armas>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<dialogos>
+	<dialogo name="fala">
+		<falas>
+			<fala>Hgr!! Soldado!!</fala>
+			<fala>Cuidado!! A floresta à frente está cheia de negritocor=redcomedores de cérebro..fimcorfimngt</fala>
+			<fala>Eu estava procurando os 3 baús escondidos, mas acabei sendo mordido..</fala>
+			<fala>É o meu fim e pode ser o seu também.. Seja cauteloso..</fala>
+		</falas>
+	</dialogo>
+
+	<dialogo name="fala1">
+		<falas>
+			<fala>Eu espero que você tenha mais sorte do que eu..</fala>
+		</falas>
+	</dialogo>
+</dialogos>

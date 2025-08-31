@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<dialogos>
+	<dialogo name="fala">
+		<falas>
+			<fala>Hgr!! Soldier!!</fala>
+			<fala>Beware!! The forest ahead is full of brain eaters..</fala>
+			<fala>I was looking for the 3 hidden chests, but I ended up being bitten..</fala>
+			<fala>It's my end and it could be yours too.. Be careful..</fala>
+		</falas>
+	</dialogo>
+
+	<dialogo name="fala1">
+		<falas>
+			<fala>I hope you have better luck than me..</fala>
+		</falas>
+	</dialogo>
+</dialogos>
