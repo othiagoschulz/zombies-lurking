@@ -320,6 +320,7 @@ public class scriptPersonagem : MonoBehaviour
 
     public void trocarArma(int id)
     {
+        idArma = id;
 
         _GameController.idArma = id;
 

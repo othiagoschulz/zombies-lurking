@@ -117,6 +117,15 @@ public class _GameController : MonoBehaviour
         GameObject tArma = Instantiate(armaInicial[idPersonagem]);
         invScript.itemCarregado.Add(tArma);
 
+        armaInfo info = tArma.GetComponent<armaInfo>();
+        if (info != null)
+        {
+            int id = idArmaInicial;
+            info.danoMin = danoMinimo[id];
+            info.danoMax = danoMaximo[id];
+            info.tipoDano = tipoDanoArma[id];
+        }
+
         idArmaInicial = tArma.GetComponent<item>().idItem;
 
         vidaAtual = vidaMaxima;
