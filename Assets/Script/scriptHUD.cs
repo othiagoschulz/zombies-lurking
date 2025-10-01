@@ -17,47 +17,13 @@ public class scriptHUD : MonoBehaviour
     {
         _GameController = FindObjectOfType(typeof(_GameController)) as _GameController;
         scriptPersonagem = FindObjectOfType(typeof(scriptPersonagem)) as scriptPersonagem;   //INSTANCIANDO O CRIPT DO PERSONAGEM
-        painelFlecha.SetActive(false);
-
-        if (_GameController.idClasse[_GameController.idPersonagem] == 1)
-        {
-            iconFlecha.sprite = _GameController.iconFlecha[_GameController.idFlechaEquipada];
-            painelFlecha.SetActive(true);
-        }      
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        controleVida();
-        if (painelFlecha.activeSelf == true)
-        {
-            if (Input.GetButtonDown("btnL"))
-            {
-                if (_GameController.idFlechaEquipada == 0)
-                {
-                    _GameController.idFlechaEquipada = _GameController.iconFlecha.Length - 1;
-                }
-                else
-                {
-                    _GameController.idFlechaEquipada -= 1;
-                }
-            }
-            else if (Input.GetButtonDown("btnR"))
-            {
-                if (_GameController.idFlechaEquipada == _GameController.iconFlecha.Length - 1)
-                {
-                    _GameController.idFlechaEquipada = 0;
-                }
-                else
-                {
-                    _GameController.idFlechaEquipada += 1;
-                }
-            }
-            iconFlecha.sprite = _GameController.iconFlecha[_GameController.idFlechaEquipada];
-            qtdFlechas.text = "x " + _GameController.qtdFlechas[_GameController.idFlechaEquipada].ToString();
-
-        }
+        controleVida();        
         qtdBandagemHud.text = "x " +_GameController.qtdBandagens.ToString();
     }
 

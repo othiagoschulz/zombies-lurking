@@ -186,12 +186,7 @@ public class scriptPersonagem : MonoBehaviour
         animacaoPersonagem.SetBool("Chao", Chao);
         animacaoPersonagem.SetInteger("idAnimacao", idAnimacao);
         animacaoPersonagem.SetFloat("velocidadeY", personagemRb.linearVelocity.y);
-        animacaoPersonagem.SetFloat("idClasseArma", _GameController.idClasseArma[_GameController.idArmaAtual]);
-
-        // Atualiza flechas do arco
-        bool temFlechas = _GameController.qtdFlechas[_GameController.idFlechaEquipada] >= 1;
-        foreach (GameObject f in flechaArco)
-            f.SetActive(temFlechas);
+        animacaoPersonagem.SetFloat("idClasseArma", _GameController.idClasseArma[_GameController.idArmaAtual]);        
 
         // Interações
         interagir();
@@ -225,51 +220,6 @@ public class scriptPersonagem : MonoBehaviour
 
             case 1:
                 atacando = true;
-                break;
-        }
-    }
-
-    void atackArco(int atk)
-    {
-        switch (atk)
-        {
-            case 0:
-                atacando = false;
-                arcos[2].SetActive(false);
-
-                break;
-
-            case 1:
-                atacando = true;
-                break;
-
-            case 2:
-                if (_GameController.qtdFlechas[_GameController.idFlechaEquipada] >= 1)
-                {
-                    _GameController.qtdFlechas[_GameController.idFlechaEquipada] -= 1;
-
-                    float direcao;
-                    if (olhandoEsquerda)
-                    {
-                        direcao = -1f;
-                    }
-                    else
-                    {
-                        direcao = 1f;
-                    }
-
-                    GameObject flecha = Instantiate(_GameController.flechaPrefab[_GameController.idFlechaEquipada], spawnFlecha.position, Quaternion.identity);
-
-                    // Ajusta escala da flecha
-                    flecha.transform.localScale = new Vector3(
-                        Mathf.Abs(flecha.transform.localScale.x) * direcao,
-                        flecha.transform.localScale.y,
-                        flecha.transform.localScale.z);
-
-                    // Define velocidade
-                    flecha.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(_GameController.velFlecha[_GameController.idFlechaEquipada] * direcao, 0);
-                    Destroy(flecha, 2);
-                }
                 break;
         }
     }

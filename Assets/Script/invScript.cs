@@ -28,12 +28,7 @@ public class invScript : MonoBehaviour
         foreach(Image icon in iconeItem){
             icon.sprite = null;
             icon.gameObject.SetActive(false);
-        }
-
-        qtdBandagem.text = "x " + _GameController.qtdBandagens.ToString();
-        qtdFlechaN.text = "x " + _GameController.qtdFlechas[0].ToString();
-        qtdFlechaF.text = "x " + _GameController.qtdFlechas[1].ToString();
-        qtdFlechaO.text = "x " + _GameController.qtdFlechas[2].ToString();
+        }        
 
         int s = 0;  //ID SLOT
         foreach(GameObject item in itemInv){

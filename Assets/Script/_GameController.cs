@@ -26,8 +26,6 @@ public class _GameController : MonoBehaviour
     public int vidaMaxima;
     public int vidaAtual;
     public int idArma, idArmaAtual;
-    public int idFlechaEquipada;
-    public int[] qtdFlechas;        //0 - Flecha Normal, 1 - Flecha de Ferro, 2 - Flecha de Ouro
     public int qtdBandagens;
 
 
@@ -43,7 +41,7 @@ public class _GameController : MonoBehaviour
     public List<string> nomeArma;
     public List<Sprite> imgInventario;
     public List<int> custoArma;
-    public List<int> idClasseArma;        //0 = ESPADA; 1 = ARCO
+    public List<int> idClasseArma;        //0 = ESPADA;
 
     public List<Sprite> spriteArmas1;        //SPRITE DE ARMAS 1
     public List<Sprite> spriteArmas2;        //SPRITE DE ARMAS 2
@@ -53,12 +51,6 @@ public class _GameController : MonoBehaviour
     public List<int> danoMaximo;
     public List<int> tipoDanoArma;
 
-
-    [Header("Config Flechas")]
-    public Sprite[] iconFlecha;
-    public Sprite[] imgFlecha;
-    public GameObject[] flechaPrefab;
-    public float[] velFlecha;
 
     [Header("Primeiro elemento de cada painel")]
     public Button primeiroPauseMenu;
