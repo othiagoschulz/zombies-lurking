@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 10221601}
   - component: {fileID: 10221604}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: btnConfiguracoes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 29087489}
   - component: {fileID: 29087492}
   m_Layer: 5
-  m_Name: Button
+  m_Name: btnNovoJogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2335,6 +2335,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992065470}
   m_CullTransparentMesh: 1
+--- !u!1 &1041322069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1041322071}
+  - component: {fileID: 1041322070}
+  m_Layer: 0
+  m_Name: SalvareCarregar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1041322070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041322069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ebb4f2d2dce4c4a8a1ce97c3948ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1041322071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041322069}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -71.938705, y: 198.75256, z: -8.623986}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1056586643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,7 +2470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1066623105
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3495,7 +3539,7 @@ GameObject:
   - component: {fileID: 1637394323}
   - component: {fileID: 1637394326}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: btnCarregarJogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3564,7 +3608,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1637394324}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1041322070}
+        m_TargetAssemblyTypeName: SalvareCarregar, Assembly-CSharp
+        m_MethodName: Carregar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1637394324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4560,7 +4616,7 @@ GameObject:
   - component: {fileID: 2141833341}
   - component: {fileID: 2141833344}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: btnSair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4702,3 +4758,4 @@ SceneRoots:
   - {fileID: 2092798667}
   - {fileID: 1245212779}
   - {fileID: 89962567}
+  - {fileID: 1041322071}

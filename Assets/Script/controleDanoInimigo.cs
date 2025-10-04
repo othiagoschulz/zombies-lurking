@@ -10,6 +10,8 @@ public class controleDanoInimigo : MonoBehaviour
     private Animator animator;
 
     [Header("Configuração da vida")]
+    public int idZumbi;
+    private bool checado = false;
     public int vidaInimigo;        //VIDA DO INIMIGO
     public int vidaAtual;
     public GameObject barrasVida;         //OBJETO QUE CONTEM AS BARRAS
@@ -39,6 +41,7 @@ public class controleDanoInimigo : MonoBehaviour
     [Header("Configuração do loot")]
     public GameObject loots;
 
+
     void Start()
     {
         _GameController = FindObjectOfType(typeof(_GameController)) as _GameController;
@@ -51,6 +54,12 @@ public class controleDanoInimigo : MonoBehaviour
         barraVida.localScale = new Vector3(1, 1, 1);
 
         sRender.color = corInimigo[0];
+
+        if (_GameController != null && _GameController.zumbisMortosIDs.Contains(idZumbi))
+        {
+            Destroy(gameObject); // já foi morto, não deve aparecer
+            return;
+        }
 
         if (IolhandoEsquerda == true)
         {
@@ -90,6 +99,16 @@ public class controleDanoInimigo : MonoBehaviour
         else if (IolhandoEsquerda == false && playerEsquerda == false)
         {
             kx = knockX;
+        }
+
+        if (!checado && _GameController != null) 
+        {
+            checado = true;
+
+            if (_GameController.zumbisMortosIDs.Contains(idZumbi))
+            {
+                Destroy(gameObject);
+            }
         }
 
 
@@ -145,7 +164,7 @@ public class controleDanoInimigo : MonoBehaviour
 
                         ia.rBody.simulated = false;          // impede que o Rigidbody2D interaja
                         Collider2D colisor = GetComponent<Collider2D>();
-                        if(colisor != null) colisor.enabled = false;        // opcional, desativa colisão
+                        if (colisor != null) colisor.enabled = false;        // opcional, desativa colisão
 
                         StartCoroutine("loot");          //COMEÇA A COROTINA LOOT
                     }
@@ -202,22 +221,22 @@ public class controleDanoInimigo : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
 
-            // INCREMENTA O CONTADOR DE ZUMBIS MORTOS
+        // INCREMENTA O CONTADOR DE ZUMBIS MORTOS
         if (_GameController != null)
         {
-            _GameController.ZumbiMorto();
+            _GameController.ZumbiMorto(idZumbi);
         }
 
         Destroy(fxMorte);                   //OPERAÇÃO QUE DESTROI A ANIMAÇÃO DE MORTE
         Destroy(this.gameObject);           //OPERAÇÃO QUE DESTROI O LOOT
     }
     IEnumerator invulneravel()      //SISTEMA DE INVULNERABILIDADE, TROCA A OPACIDADE DO INIMIGO AO RECEBER DANO
-    {             
+    {
 
         IAzumbi ia = GetComponent<IAzumbi>();
         ia.levandoDano = true;
 
-        ia.mudarEstado(estadoInimigo.RECUAR);        
+        ia.mudarEstado(estadoInimigo.RECUAR);
 
         sRender.color = corInimigo[1];
         yield return new WaitForSeconds(0.3f);

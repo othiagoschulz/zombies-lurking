@@ -2,21 +2,21 @@
 	<arma atributo="nome">
 		<armas>
 			
-			<a>Espada A</a>
-			<a>Espada B</a>
-			<a>Espada C</a>
-			<a>Espada D</a>
-			<a>Espada E</a>
-			<a>Espada F</a>
-			<a>Espada G</a>
-			<a>Espada H</a>
-			<a>Espada I</a>
-			<a>Espada J</a>
-			<a>Machado A</a>
-			<a>Machado B</a>
-			<a>Machado C</a>
-			<a>Machado D</a>
-			<a>Machado E</a>
+			<a>EspadaA</a>
+			<a>EspadaB</a>
+			<a>EspadaC</a>
+			<a>EspadaD</a>
+			<a>EspadaE</a>
+			<a>EspadaF</a>
+			<a>EspadaG</a>
+			<a>EspadaH</a>
+			<a>EspadaI</a>
+			<a>EspadaJ</a>
+			<a>MachadoA</a>
+			<a>MachadoB</a>
+			<a>MachadoC</a>
+			<a>MachadoD</a>
+			<a>MachadoE</a>
 		</armas>
 	</arma>
 

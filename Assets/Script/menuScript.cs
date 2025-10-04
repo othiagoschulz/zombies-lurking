@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 public class menuScript : MonoBehaviour
 {
-    public  VideoPlayer videoPlayer;
-    public  GameObject  menuInicial, menuOpcoes, rawImage;
-    public  AudioSource efeitoSonoro;
+    public VideoPlayer videoPlayer;
+    public GameObject menuInicial, menuOpcoes, rawImage;
+    public AudioSource efeitoSonoro;
     void Start()
     {
         rawImage.SetActive(false);
@@ -17,29 +17,34 @@ public class menuScript : MonoBehaviour
 
     void Update()
     {
-        if(!videoPlayer.isPlaying && Input.anyKeyDown){     
+        if (!videoPlayer.isPlaying && Input.anyKeyDown)
+        {
             efeitoSonoro.Play();
             videoPlayer.Play();
             rawImage.SetActive(true);
             menuInicial.SetActive(true);
         }
-    }
+    }    
 
-    public void Opcoes(){
+    public void Opcoes()
+    {
         menuInicial.SetActive(false);
-        menuOpcoes.SetActive(true);        
+        menuOpcoes.SetActive(true);
     }
 
-    public void RetornarMenuInicial(){
-        menuOpcoes.SetActive(false);  
-        menuInicial.SetActive(true);        
+    public void RetornarMenuInicial()
+    {
+        menuOpcoes.SetActive(false);
+        menuInicial.SetActive(true);
     }
-    
-    public void NovoJogo(){
+
+    public void NovoJogo()
+    {
         SceneManager.LoadScene("Cena 1");
     }
 
-    public void SairJogo(){
+    public void SairJogo()
+    {
         Application.Quit();
     }
 }

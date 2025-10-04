@@ -14,6 +14,7 @@ public class IAzumbi : MonoBehaviour
 {
     private scriptPersonagem scriptPersonagem;
     private _GameController _GameController;
+    private controleDanoInimigo controleDanoInimigo;
     public Rigidbody2D rBody;
     private Animator animator;
     public estadoInimigo estadoInimigoAtual;
@@ -44,16 +45,24 @@ public class IAzumbi : MonoBehaviour
     {
         _GameController = FindObjectOfType(typeof(_GameController)) as _GameController;
         scriptPersonagem = FindObjectOfType(typeof(scriptPersonagem)) as scriptPersonagem;
+        controleDanoInimigo = FindObjectOfType(typeof(controleDanoInimigo)) as controleDanoInimigo;
+
+        if (controleDanoInimigo != null && _GameController != null)
+        {
+            // Se o zumbi já foi morto, destrói ele antes de executar qualquer coisa
+            if (_GameController.zumbisMortosIDs.Contains(controleDanoInimigo.idZumbi))
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            // Garante que o zumbi conhece o GameController
+            controleDanoInimigo._GameController = _GameController;
+        }
+
 
         rBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        controleDanoInimigo cdi = GetComponent<controleDanoInimigo>();
-        if (cdi != null)
-        {
-            cdi._GameController = _GameController;
-        }
-
 
         if (olhandoEsquerda == true)
             {
