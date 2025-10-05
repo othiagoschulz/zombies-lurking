@@ -24,6 +24,15 @@ public class bau : MonoBehaviour{
             open = true;
             spriteRenderer.sprite = imagemObjeto[1];
             GetComponent<Collider2D>().enabled = false;
+
+            if (tag == "bauFloresta")
+            {
+                _GameController.bausAbertos++;
+                if (_GameController.bausTXT != null)
+                {
+                    _GameController.bausTXT.text = _GameController.bausAbertos.ToString() + "x";
+                }
+            }
         }
     }
 

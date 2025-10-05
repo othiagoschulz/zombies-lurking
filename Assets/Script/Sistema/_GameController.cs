@@ -86,7 +86,7 @@ public class _GameController : MonoBehaviour
         transicao = FindObjectOfType(typeof(transicao)) as transicao;
         pauseScript = FindObjectOfType(typeof(pauseScript)) as pauseScript;
         invScript = FindObjectOfType(typeof(invScript)) as invScript;
-        scriptPersonagem = FindObjectOfType(typeof(scriptPersonagem)) as scriptPersonagem;
+        scriptPersonagem = FindObjectOfType(typeof(scriptPersonagem)) as scriptPersonagem;        
 
         if (FindObjectsOfType<_GameController>().Length > 1)
         {
@@ -128,21 +128,31 @@ public class _GameController : MonoBehaviour
             qtdBandagens = data.qtdBandagens;
             vidaAtual = data.vidaAtual;
             idArmaAtual = data.idArmaAtual;
-            zumbisMortosIDs = data.zumbisMortosIDs ?? new List<int>();
-            bausAbertosIDs = data.bausAbertosIDs ?? new List<int>();
             tempoPartida = data.tempoPartida;
-
             scriptPersonagem.transform.position = new Vector3(data.posX, data.posY, data.posZ);
-
+            
+            zumbisMortosIDs = data.zumbisMortosIDs ?? new List<int>();
             zumbisMortos = zumbisMortosIDs.Count;
             if (zumbisMortosTXT != null)
-                zumbisMortosTXT.text = zumbisMortos + "x";
+                zumbisMortosTXT.text = zumbisMortos + "x";  
 
-            var allBaus = FindObjectsOfType<bau>();
-            bausAbertos = allBaus.Count(b => bausAbertosIDs.Contains(b.idBau) && b.CompareTag("bauFloresta"));
+            bausAbertosIDs = data.bausAbertosIDs ?? new List<int>();
+            bausAbertos = FindObjectsOfType<bau>().Count(b => b.tag == "bauFloresta" && bausAbertosIDs.Contains(b.idBau));
+
             if (bausTXT != null)
                 bausTXT.text = bausAbertos.ToString() + "x";
 
+            // força atualização dos baús na cena
+            foreach (var bau in FindObjectsOfType<bau>())
+            {
+                if (bausAbertosIDs.Contains(bau.idBau))
+                {
+                    bau.open = true;
+                    var sr = bau.GetComponent<SpriteRenderer>();
+                    sr.sprite = bau.imagemObjeto[1];
+                    bau.GetComponent<Collider2D>().enabled = false;
+                }
+            }
             SalvareCarregar.dadosCarregados = null;
         }        
     }
