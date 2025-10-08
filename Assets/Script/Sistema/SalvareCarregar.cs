@@ -39,6 +39,19 @@ public class SalvareCarregar : MonoBehaviour
         data.bausAbertosIDs = _GameController.bausAbertosIDs; // IDs de todos os baús abertos
         data.tempoPartida = _GameController.tempoPartida;
 
+        // Salva IDs do inventário
+        if (_GameController != null && _GameController.GetComponent<invScript>() != null)
+        {
+            invScript inv = _GameController.GetComponent<invScript>();
+            foreach (GameObject item in inv.itemInv)
+            {
+                if (item == null) continue;
+                item itemInfo = item.GetComponent<item>();
+                if (itemInfo != null)
+                    data.inventarioIDs.Add(itemInfo.idItem);
+            }
+        }
+
         if (scriptPersonagem != null)
         {
             Vector3 pos = scriptPersonagem.transform.position;
@@ -79,6 +92,7 @@ public class SalvareCarregar : MonoBehaviour
         public int idArmaAtual;
         public List<int> zumbisMortosIDs = new List<int>();
         public List<int> bausAbertosIDs = new List<int>(); // IDs de todos os baús abertos
+        public List<int> inventarioIDs = new List<int>();
         public float tempoPartida;
 
         //posição do personagem

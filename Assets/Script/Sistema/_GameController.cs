@@ -100,21 +100,25 @@ public class _GameController : MonoBehaviour
         painelVitoria.SetActive(false);
 
         idPersonagem = PlayerPrefs.GetInt("idPersonagem");
-        invScript.itemInv.Add(armaInicial[idPersonagem]);
 
-        GameObject tArma = Instantiate(armaInicial[idPersonagem]);
-        invScript.itemCarregado.Add(tArma);
-
-        armaInfo info = tArma.GetComponent<armaInfo>();
-        if (info != null)
+        if (SalvareCarregar.dadosCarregados == null)
         {
-            int id = idArmaInicial;
-            info.danoMin = danoMinimo[id];
-            info.danoMax = danoMaximo[id];
-            info.tipoDano = tipoDanoArma[id];
-        }
+            invScript.itemInv.Add(armaInicial[idPersonagem]);
 
-        idArmaInicial = tArma.GetComponent<item>().idItem;
+            GameObject tArma = Instantiate(armaInicial[idPersonagem]);
+            invScript.itemCarregado.Add(tArma);
+
+            armaInfo info = tArma.GetComponent<armaInfo>();
+            if (info != null)
+            {
+                int id = idArmaInicial;
+                info.danoMin = danoMinimo[id];
+                info.danoMax = danoMaximo[id];
+                info.tipoDano = tipoDanoArma[id];
+            }
+
+            idArmaInicial = tArma.GetComponent<item>().idItem;
+        }
 
         vidaAtual = vidaMaxima;
 
@@ -130,11 +134,11 @@ public class _GameController : MonoBehaviour
             idArmaAtual = data.idArmaAtual;
             tempoPartida = data.tempoPartida;
             scriptPersonagem.transform.position = new Vector3(data.posX, data.posY, data.posZ);
-            
+
             zumbisMortosIDs = data.zumbisMortosIDs ?? new List<int>();
             zumbisMortos = zumbisMortosIDs.Count;
             if (zumbisMortosTXT != null)
-                zumbisMortosTXT.text = zumbisMortos + "x";  
+                zumbisMortosTXT.text = zumbisMortos + "x";
 
             bausAbertosIDs = data.bausAbertosIDs ?? new List<int>();
             bausAbertos = FindObjectsOfType<bau>().Count(b => b.tag == "bauFloresta" && bausAbertosIDs.Contains(b.idBau));
@@ -153,6 +157,21 @@ public class _GameController : MonoBehaviour
                     bau.GetComponent<Collider2D>().enabled = false;
                 }
             }
+
+            // Recria inventário pelo ID
+            if (invScript != null)
+            {
+                invScript.itemInv.Clear();
+                foreach (int id in data.inventarioIDs)
+                {
+                    GameObject prefab = EncontrarArmaPorID(id);
+                    if (prefab != null)
+                        invScript.itemInv.Add(prefab);
+                }
+
+                invScript.carregarInv();
+            }      
+
             SalvareCarregar.dadosCarregados = null;
         }        
     }
@@ -199,6 +218,7 @@ public class _GameController : MonoBehaviour
 
     public void usarItemArma(int idArma)
     {
+        idArmaAtual = idArma;
         scriptPersonagem.trocarArma(idArma);
     }
 
@@ -209,6 +229,13 @@ public class _GameController : MonoBehaviour
 
         invScript.itemInv[0] = temp2;
         invScript.itemInv[idSlot] = temp1;
+
+        item itemInfo = temp2.GetComponent<item>();
+        if (itemInfo != null)
+            idArmaAtual = itemInfo.idItem;
+
+        usarItemArma(idArmaAtual);
+    
 
         pauseScript.voltarAoJogo();
     }
@@ -270,6 +297,18 @@ public class _GameController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private GameObject EncontrarArmaPorID(int idArma)
+    {
+        foreach (GameObject arma in Resources.LoadAll<GameObject>("Armas"))
+        {
+            if (arma == null) continue;
+            item itemInfo = arma.GetComponent<item>();
+            if (itemInfo != null && itemInfo.idItem == idArma)
+                return arma;
+        }
+        return null;
     }
 
     IEnumerator FimdeJogo()
