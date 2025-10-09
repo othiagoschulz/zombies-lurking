@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 public class menuScript : MonoBehaviour
 {
+    private SalvareCarregar SalvareCarregar;
     public VideoPlayer videoPlayer;
     public GameObject menuInicial, menuOpcoes, rawImage;
     public AudioSource efeitoSonoro;
     void Start()
     {
+        SalvareCarregar = FindObjectOfType<SalvareCarregar>();
         rawImage.SetActive(false);
         menuOpcoes.SetActive(false);
         menuInicial.SetActive(false);
@@ -40,6 +42,7 @@ public class menuScript : MonoBehaviour
 
     public void NovoJogo()
     {
+        SalvareCarregar.dadosCarregados = null;
         SceneManager.LoadScene("Cena 1");
     }
 
