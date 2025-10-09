@@ -50,9 +50,10 @@ public class scriptPersonagem : MonoBehaviour
 
         //CARREGA OS DADOS INICIAIS DO PERSONAGEM
         vidaMax = _GameController.vidaMaxima;
-        idArma = _GameController.idArma;
-
         vidaAtual = vidaMax;
+
+        idArma = _GameController.idArmaAtual;
+        trocarArma(idArma);
 
         armaInfo = FindObjectOfType(typeof(armaInfo)) as armaInfo;
 
@@ -65,8 +66,6 @@ public class scriptPersonagem : MonoBehaviour
         {         //DESABILITA OS ARCOS QUANDO O JOGO INICIAR, PARA NÃO ACONTECER BUGS
             o.SetActive(false);
         }
-
-        trocarArma(idArma);
     }
 
     void FixedUpdate()
