@@ -355,8 +355,21 @@ public class _GameController : MonoBehaviour
     public void ResetarCena()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        painelFimdeJogo.SetActive(false);
+
+        SalvareCarregar.dadosCarregados = null;
+
+        moeda = 0;
+        zumbisMortos = 0;
+        zumbisMortosIDs.Clear();
+        bausAbertos = 0;
+        bausAbertosIDs.Clear();
+        tempoPartida = 0f;
+        vidaAtual = vidaMaxima;
+        idArmaAtual = idArmaInicial;
+
+        painelFimdeJogo.SetActive(false);    
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
     }
 
     private void PiscarTexto()
