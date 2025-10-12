@@ -3448,6 +3448,10 @@ PrefabInstance:
       propertyPath: tempoRecuo
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (8)
@@ -336830,6 +336834,10 @@ PrefabInstance:
       propertyPath: tempoRecuo
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (9)
@@ -339726,6 +339734,10 @@ PrefabInstance:
     - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: tempoRecuo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
@@ -354722,6 +354734,10 @@ PrefabInstance:
     - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: tempoRecuo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
@@ -374595,6 +374611,10 @@ PrefabInstance:
       propertyPath: tempoRecuo
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (3)
@@ -378557,6 +378577,10 @@ PrefabInstance:
       propertyPath: tempoRecuo
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (1)
@@ -381266,6 +381290,10 @@ PrefabInstance:
       propertyPath: tempoRecuo
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (6)
@@ -382405,6 +382433,10 @@ PrefabInstance:
     - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: tempoRecuo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
@@ -386162,6 +386194,10 @@ PrefabInstance:
     - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: tempoRecuo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
@@ -399311,6 +399347,10 @@ PrefabInstance:
     - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: tempoRecuo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
@@ -456557,6 +456597,10 @@ PrefabInstance:
     - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: tempoRecuo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: tempoAtaque
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name

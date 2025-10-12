@@ -7,8 +7,7 @@ public enum estadoInimigo
     PARADO,
     ALERTA,
     PATRULHA,
-    ATACANDO,
-    RECUAR
+    ATACANDO
 }
 public class IAzumbi : MonoBehaviour
 {
@@ -82,7 +81,7 @@ public class IAzumbi : MonoBehaviour
             return;
         }
 
-        if (estadoInimigoAtual != estadoInimigo.ATACANDO && estadoInimigoAtual != estadoInimigo.RECUAR)
+        if (estadoInimigoAtual != estadoInimigo.ATACANDO)
         {
             Debug.DrawRay(transform.position, dir * distanciaVerPersonagem, Color.blue);
             RaycastHit2D hitPersonagem = Physics2D.Raycast(transform.position, dir, distanciaVerPersonagem, layerPersonagem);
@@ -103,13 +102,13 @@ public class IAzumbi : MonoBehaviour
             }
         }
 
-        if (estadoInimigoAtual == estadoInimigo.RECUAR)
+        if (estadoInimigoAtual == estadoInimigo.ALERTA)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, distanciaMudarRota, layerObstaculo);
-
-            if (hit == true)
+            RaycastHit2D hitObstaculo = Physics2D.Raycast(transform.position, dir, distanciaMudarRota, layerObstaculo);
+            if (hitObstaculo == true)
             {
-                flip();
+                mudarEstado(estadoInimigo.PARADO);
+                return; // evita continuar o código e cair
             }
         }
 
@@ -193,9 +192,8 @@ public class IAzumbi : MonoBehaviour
 
     public void mudarEstado(estadoInimigo novoEstado)
     {
-        if (levandoDano && novoEstado != estadoInimigo.RECUAR)
+        if (levandoDano)
         {
-            // Se estiver levando dano, só permite mudar para RECUAR
             return;
         }
 
@@ -221,17 +219,7 @@ public class IAzumbi : MonoBehaviour
 
             case estadoInimigo.ATACANDO:
                 animator.SetTrigger("ataque");
-                break;
-
-            case estadoInimigo.RECUAR:
-                atacando = false;
-                foreach (GameObject o in armas)
-                    o.SetActive(false);
-
-                StopAllCoroutines();
-                flip();
-                velocidade = velocidadeBase * 2;
-                StartCoroutine("recuar");
+                velocidade = 0;
                 break;
         }
     }
@@ -244,7 +232,7 @@ public class IAzumbi : MonoBehaviour
                 atacando = false;
                 foreach (GameObject o in armas)
                     o.SetActive(false);
-                mudarEstado(estadoInimigo.RECUAR);
+                mudarEstado(estadoInimigo.ALERTA);
                 break;
 
             case 1:
@@ -266,7 +254,6 @@ public class IAzumbi : MonoBehaviour
     
     public bool podeUsarArma()  // Verifica se o inimigo pode usar a arma
     {
-        return !levandoDano && estadoInimigoAtual != estadoInimigo.RECUAR;
+        return !levandoDano;
     }
-
 }

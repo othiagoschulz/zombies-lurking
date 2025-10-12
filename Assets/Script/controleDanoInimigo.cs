@@ -236,7 +236,7 @@ public class controleDanoInimigo : MonoBehaviour
         IAzumbi ia = GetComponent<IAzumbi>();
         ia.levandoDano = true;
 
-        ia.mudarEstado(estadoInimigo.RECUAR);
+        ia.mudarEstado(estadoInimigo.ALERTA);
 
         sRender.color = corInimigo[1];
         yield return new WaitForSeconds(0.3f);
