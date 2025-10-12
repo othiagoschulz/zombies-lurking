@@ -215,7 +215,7 @@ public class IAzumbi : MonoBehaviour
                 break;
 
             case estadoInimigo.ALERTA:
-                velocidade = 0;
+                velocidade = velocidadeBase * 2;
                 balaoAlerta.SetActive(true);
                 break;
 
