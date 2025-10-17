@@ -40,6 +40,11 @@ public class scriptPersonagem : MonoBehaviour
     public Transform spawnFlecha;
     public GameObject balaoAlerta;
 
+    //INVULNERABILIDADE APÓS SOFRER DANO
+    public bool invulneravel = false;
+    public float tempoInvulneravel = 0.8f; // tempo entre danos
+
+
     void Start()
     {
         pauseScript = FindObjectOfType(typeof(pauseScript)) as pauseScript;
@@ -312,10 +317,17 @@ public class scriptPersonagem : MonoBehaviour
         }
         _GameController.idArmaAtual = _GameController.idArma;
     }
-    
+
     IEnumerator RestaurarVelocidade()
     {
         yield return new WaitForSeconds(0.3f);
         velocidade = 2f;
+    }
+
+    public IEnumerator Invulneravel()
+    {
+        invulneravel = true;
+        yield return new WaitForSeconds(tempoInvulneravel);
+        invulneravel = false;
     }
 }

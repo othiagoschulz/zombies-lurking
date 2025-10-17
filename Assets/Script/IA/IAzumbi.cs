@@ -25,6 +25,9 @@ public class IAzumbi : MonoBehaviour
     public float tempoParado;
     public float tempoRecuo;
 
+    public float tempoEntreAtaques = 1f; // intervalo entre ataques
+    private bool podeAtacar = true;
+
     private Vector3 dir = Vector3.right;
     public float distanciaMudarRota;
     public LayerMask layerObstaculo;
@@ -85,8 +88,15 @@ public class IAzumbi : MonoBehaviour
         {
             Debug.DrawRay(transform.position, dir * distanciaVerPersonagem, Color.blue);
             RaycastHit2D hitPersonagem = Physics2D.Raycast(transform.position, dir, distanciaVerPersonagem, layerPersonagem);
+            RaycastHit2D hitPersonagemTras = Physics2D.Raycast(transform.position, -dir, distanciaVerPersonagem, layerPersonagem);
+
             if (hitPersonagem == true)
             {
+                mudarEstado(estadoInimigo.ALERTA);
+            }
+                else if (hitPersonagemTras)
+            {
+                flip();
                 mudarEstado(estadoInimigo.ALERTA);
             }
         }
@@ -144,24 +154,34 @@ public class IAzumbi : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (estadoInimigoAtual == estadoInimigo.ATACANDO && col.CompareTag("Player"))
+        if (col.CompareTag("Player"))
         {
-            scriptPersonagem.emDano = true;
+            mudarEstado(estadoInimigo.ATACANDO);
+            if (estadoInimigoAtual == estadoInimigo.ATACANDO && col.CompareTag("Player"))
+            {
+                scriptPersonagem.emDano = true;
 
-            scriptPersonagem.animacaoPersonagem.ResetTrigger("ataque"); // FORÇA A SAÍDA DA ANIMAÇÃO DE ATAQUE
+                scriptPersonagem.animacaoPersonagem.ResetTrigger("ataque"); // FORÇA A SAÍDA DA ANIMAÇÃO DE ATAQUE
 
-            scriptPersonagem.animacaoPersonagem.Play("Dano"); // INICIA A ANIMAÇÃO DE DANO
-            scriptPersonagem.velocidade = 0;
-            scriptPersonagem.personagemRb.linearVelocity = Vector2.zero; // ZERA A VELOCIDADE DO PERSONAGEM            
-            
-            // Desativa armas e arcos para evitar bug visual
-            foreach (GameObject arma in scriptPersonagem.armas) // DESATIVA A ARMA AO SOFRER DANO
-                arma.SetActive(false);         
+                scriptPersonagem.animacaoPersonagem.Play("Dano"); // INICIA A ANIMAÇÃO DE DANO
+                scriptPersonagem.velocidade = 0;
+                scriptPersonagem.personagemRb.linearVelocity = Vector2.zero; // ZERA A VELOCIDADE DO PERSONAGEM            
 
-            scriptPersonagem.atacando = false; // DESATIVA O ATAQUE AO SOFRER DANO
+                // Desativa armas e arcos para evitar bug visual
+                foreach (GameObject arma in scriptPersonagem.armas) // DESATIVA A ARMA AO SOFRER DANO
+                    arma.SetActive(false);
 
-            _GameController.vidaAtual -= 1;
+                scriptPersonagem.atacando = false; // DESATIVA O ATAQUE AO SOFRER DANO
+
+                _GameController.vidaAtual -= 1;
+            }
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+            mudarEstado(estadoInimigo.ATACANDO);
     }
 
     void flip()
