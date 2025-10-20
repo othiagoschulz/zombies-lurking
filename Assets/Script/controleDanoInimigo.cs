@@ -146,6 +146,30 @@ public class controleDanoInimigo : MonoBehaviour
 
                     barraVida.localScale = new Vector3(contVida, 1, 1);
 
+                    // 🔹 Integração com IAzumbi
+                    IAzumbi zumbiIA = GetComponent<IAzumbi>();
+                    if (zumbiIA != null)
+                    {
+                        zumbiIA.encerrarAtaque();
+                        zumbiIA.levandoDano = true;
+
+                        float direcaoPlayer = scriptPersonagem.transform.position.x - transform.position.x;
+
+                        // só vira se o player realmente estiver bem atrás e não de frente
+                        if (Mathf.Abs(direcaoPlayer) > 0.5f) // evita flip se estiver quase de frente
+                        {
+                            bool playerADireita = direcaoPlayer > 0f;
+
+                            // só vira se estiver olhando pro lado oposto
+                            if ((playerADireita && zumbiIA.olhandoEsquerda) || (!playerADireita && !zumbiIA.olhandoEsquerda))
+                            {
+                                zumbiIA.flip();
+                            }
+                        }
+
+                        zumbiIA.StartCoroutine(zumbiIA.ResetarDano());
+                    }                              
+
                     if (vidaAtual <= 0)
                     {
                         morto = true;

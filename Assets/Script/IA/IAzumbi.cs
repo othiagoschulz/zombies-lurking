@@ -184,7 +184,7 @@ public class IAzumbi : MonoBehaviour
             mudarEstado(estadoInimigo.ATACANDO);
     }
 
-    void flip()
+    public void flip()
     {
         olhandoEsquerda = !olhandoEsquerda; //INVERTE O VALOR DA VARIAVEL BOLEANA
         float x = transform.localScale.x;
@@ -270,6 +270,21 @@ public class IAzumbi : MonoBehaviour
             o.SetActive(false);
         }
         armas[id].SetActive(true);
+    }
+
+    public void encerrarAtaque()
+    {
+        atacando = false;
+        foreach (GameObject o in armas)
+            o.SetActive(false);
+        animator.ResetTrigger("ataque");
+        mudarEstado(estadoInimigo.ALERTA);
+    }
+
+    public IEnumerator ResetarDano()
+    {
+        yield return new WaitForSeconds(0.5f);
+        levandoDano = false;
     }
     
     public bool podeUsarArma()  // Verifica se o inimigo pode usar a arma
