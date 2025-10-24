@@ -122,7 +122,10 @@ public class IAzumbi : MonoBehaviour
             }
         }
 
-        rBody.linearVelocity = new Vector2(velocidade, rBody.linearVelocity.y);
+        if (!levandoDano && estadoInimigoAtual != estadoInimigo.ATACANDO)
+        {
+            rBody.linearVelocity = new Vector2(velocidade, rBody.linearVelocity.y);
+        }
 
         if (velocidade == 0)
         {
@@ -135,16 +138,27 @@ public class IAzumbi : MonoBehaviour
 
         if (estadoInimigoAtual == estadoInimigo.ALERTA)
         {
+            Vector3 posPlayer = scriptPersonagem.transform.position;
             float dist = Vector3.Distance(transform.position, scriptPersonagem.transform.position);
+
+            RaycastHit2D hitVisao = Physics2D.Raycast(transform.position, dir, distanciaAtaque, layerPersonagem);
+
             if (dist <= distanciaAtaque)
             {
-                mudarEstado(estadoInimigo.ATACANDO);
+                // força ataque se o player estiver MUITO próximo (mesmo se o trigger falhar)
+                if (!atacando)
+                    mudarEstado(estadoInimigo.ATACANDO);
+            }
+            else if (dist <= distanciaVerPersonagem * 0.35f)
+            {
+                // player muito perto mas sem raycast (caso de ultrapassar o raio de visão)
+                if (!atacando)
+                    mudarEstado(estadoInimigo.ATACANDO);
             }
             else if (dist >= distanciaSairAlerta)
             {
                 mudarEstado(estadoInimigo.PARADO);
             }
-
         }
         if (estadoInimigoAtual != estadoInimigo.ALERTA)
         {
