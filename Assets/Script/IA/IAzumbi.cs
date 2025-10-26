@@ -26,7 +26,7 @@ public class IAzumbi : MonoBehaviour
     public float tempoRecuo;
 
     public float tempoEntreAtaques = 1f; // intervalo entre ataques
-    private bool podeAtacar = true;
+    public bool podeAtacar = true;
 
     private Vector3 dir = Vector3.right;
     public float distanciaMudarRota;
@@ -67,9 +67,9 @@ public class IAzumbi : MonoBehaviour
         animator = GetComponent<Animator>();
 
         if (olhandoEsquerda == true)
-            {
-                flip();
-            }
+        {
+            flip();
+        }
         mudarEstado(estadoInimigoInicial);
 
         velocidade = velocidadeBase;
@@ -94,7 +94,7 @@ public class IAzumbi : MonoBehaviour
             {
                 mudarEstado(estadoInimigo.ALERTA);
             }
-                else if (hitPersonagemTras)
+            else if (hitPersonagemTras)
             {
                 flip();
                 mudarEstado(estadoInimigo.ALERTA);
@@ -146,17 +146,25 @@ public class IAzumbi : MonoBehaviour
             if (dist <= distanciaAtaque)
             {
                 // força ataque se o player estiver MUITO próximo (mesmo se o trigger falhar)
-                if (!atacando)
+
+                if (!atacando && podeAtacar)
+                {
                     mudarEstado(estadoInimigo.ATACANDO);
+                    atacando = true;
+                }
             }
             else if (dist <= distanciaVerPersonagem * 0.35f)
             {
-                // player muito perto mas sem raycast (caso de ultrapassar o raio de visão)
-                if (!atacando)
+                // player muito perto mas sem raycast (caso de ultrapassar o raio de visão)                
+                if (!atacando && podeAtacar)
+                {
                     mudarEstado(estadoInimigo.ATACANDO);
+                    atacando = true;
+                }
             }
             else if (dist >= distanciaSairAlerta)
             {
+                atacando = false;
                 mudarEstado(estadoInimigo.PARADO);
             }
         }
@@ -166,36 +174,45 @@ public class IAzumbi : MonoBehaviour
         }
     }
 
+    private void AtacarPlayer()
+    {
+        if (!podeAtacar) return;
+
+        if (scriptPersonagem != null)
+        {
+            scriptPersonagem.emDano = true;
+            scriptPersonagem.animacaoPersonagem.Play("Dano");
+            scriptPersonagem.velocidade = 0;
+            scriptPersonagem.personagemRb.linearVelocity = Vector2.zero;
+
+            foreach (GameObject arma in scriptPersonagem.armas)
+                arma.SetActive(false);
+
+            scriptPersonagem.atacando = false;
+            _GameController.vidaAtual -= 1;
+
+            StartCoroutine(cooldownAtaque());
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
             mudarEstado(estadoInimigo.ATACANDO);
-            if (estadoInimigoAtual == estadoInimigo.ATACANDO && col.CompareTag("Player"))
-            {
-                scriptPersonagem.emDano = true;
-
-                scriptPersonagem.animacaoPersonagem.ResetTrigger("ataque"); // FORÇA A SAÍDA DA ANIMAÇÃO DE ATAQUE
-
-                scriptPersonagem.animacaoPersonagem.Play("Dano"); // INICIA A ANIMAÇÃO DE DANO
-                scriptPersonagem.velocidade = 0;
-                scriptPersonagem.personagemRb.linearVelocity = Vector2.zero; // ZERA A VELOCIDADE DO PERSONAGEM            
-
-                // Desativa armas e arcos para evitar bug visual
-                foreach (GameObject arma in scriptPersonagem.armas) // DESATIVA A ARMA AO SOFRER DANO
-                    arma.SetActive(false);
-
-                scriptPersonagem.atacando = false; // DESATIVA O ATAQUE AO SOFRER DANO
-
-                _GameController.vidaAtual -= 1;
-            }
+            AtacarPlayer();
         }
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.CompareTag("Player"))
-            mudarEstado(estadoInimigo.ATACANDO);
+        if (col.CompareTag("Player") && podeAtacar && !levandoDano)
+        {
+            if (!atacando)
+            {
+                mudarEstado(estadoInimigo.ATACANDO);
+            }
+        }
     }
 
     public void flip()
@@ -223,6 +240,54 @@ public class IAzumbi : MonoBehaviour
         flip();
         mudarEstado(estadoInimigo.ALERTA);
     }
+
+    IEnumerator AplicarDanoComAtraso(float atraso)
+    {
+        yield return new WaitForSeconds(atraso);
+
+        // cancela o ataque se o zumbi estiver levando dano
+        if (levandoDano)
+        {
+            atacando = false;
+            yield break;
+        }
+
+        // garante que o player ainda está perto e pode receber dano
+        float dist = Vector3.Distance(transform.position, scriptPersonagem.transform.position);
+        if (dist <= distanciaAtaque && podeAtacar && !levandoDano)
+        {
+            AtacarPlayer();
+        }
+
+        // finaliza o ataque
+        yield return new WaitForSeconds(0.4f);
+        atacando = false;
+    }
+
+    IEnumerator cooldownAtaque()
+    {
+        podeAtacar = false;
+        atacando = false;
+
+        yield return new WaitForSeconds(tempoEntreAtaques);
+
+        podeAtacar = true;
+
+        // Se o player ainda estiver por perto, reataca automaticamente
+        float dist = Vector3.Distance(transform.position, scriptPersonagem.transform.position);
+        if (dist <= distanciaAtaque && !levandoDano)
+        {
+            mudarEstado(estadoInimigo.ATACANDO); // <- força novo ataque
+        }
+        else if (dist <= distanciaVerPersonagem)
+        {
+            mudarEstado(estadoInimigo.ALERTA);
+        }
+        else
+        {
+            mudarEstado(estadoInimigo.PARADO);
+        }
+    } 
 
     public void mudarEstado(estadoInimigo novoEstado)
     {
@@ -252,9 +317,17 @@ public class IAzumbi : MonoBehaviour
                 break;
 
             case estadoInimigo.ATACANDO:
-                animator.SetTrigger("ataque");
                 velocidade = 0;
-                break;
+
+                if (podeAtacar && !atacando)
+                {
+                    atacando = true;
+                    animator.ResetTrigger("ataque");
+                    animator.SetTrigger("ataque");
+
+                    StartCoroutine(AplicarDanoComAtraso(0.4f));
+                }
+                break;        
         }
     }
 

@@ -101,7 +101,7 @@ public class controleDanoInimigo : MonoBehaviour
             kx = knockX;
         }
 
-        if (!checado && _GameController != null) 
+        if (!checado && _GameController != null)
         {
             checado = true;
 
@@ -150,8 +150,11 @@ public class controleDanoInimigo : MonoBehaviour
                     IAzumbi zumbiIA = GetComponent<IAzumbi>();
                     if (zumbiIA != null)
                     {
+                        zumbiIA.podeAtacar = false;
                         zumbiIA.encerrarAtaque();
                         zumbiIA.levandoDano = true;
+
+                        StartCoroutine(ReativarAtaque(zumbiIA));
 
                         float direcaoPlayer = scriptPersonagem.transform.position.x - transform.position.x;
 
@@ -168,7 +171,7 @@ public class controleDanoInimigo : MonoBehaviour
                         }
 
                         zumbiIA.StartCoroutine(zumbiIA.ResetarDano());
-                    }                              
+                    }
 
                     if (vidaAtual <= 0)
                     {
@@ -254,6 +257,13 @@ public class controleDanoInimigo : MonoBehaviour
         Destroy(fxMorte);                   //OPERAÇÃO QUE DESTROI A ANIMAÇÃO DE MORTE
         Destroy(this.gameObject);           //OPERAÇÃO QUE DESTROI O LOOT
     }
+
+    IEnumerator ReativarAtaque(IAzumbi z)
+    {
+        yield return new WaitForSeconds(0.4f); // tempo do stun do dano
+        z.podeAtacar = true;
+    } 
+
     IEnumerator invulneravel()      //SISTEMA DE INVULNERABILIDADE, TROCA A OPACIDADE DO INIMIGO AO RECEBER DANO
     {
 

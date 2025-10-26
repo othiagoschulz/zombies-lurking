@@ -3452,9 +3452,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -336838,9 +336846,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -339739,9 +339755,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -354739,9 +354763,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -361859,6 +361891,8 @@ MonoBehaviour:
   - {fileID: 1252049444}
   spawnFlecha: {fileID: 621744258}
   balaoAlerta: {fileID: 824882265}
+  invulneravel: 0
+  tempoInvulneravel: 0.8
 --- !u!50 &927880410
 Rigidbody2D:
   serializedVersion: 5
@@ -374615,9 +374649,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -378581,9 +378623,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -381294,9 +381344,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -382438,9 +382496,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -386199,9 +386265,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -399352,9 +399426,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -456602,9 +456684,17 @@ PrefabInstance:
       propertyPath: tempoAtaque
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4124224831051402709, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: distanciaAtaque
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
       value: Zumbi
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
