@@ -10,6 +10,8 @@ TagManager:
   - porta
   - inimigo
   - bauFloresta
+  - Lurking
+  - Runner
   layers:
   - Default
   - TransparentFX

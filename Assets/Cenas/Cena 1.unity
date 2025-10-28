@@ -3458,11 +3458,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi (8)
+      value: Runner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Runner
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Runner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -336852,11 +336860,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi (9)
+      value: Runner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Runner
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Runner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -339054,7 +339070,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14065081, y: 0}
   m_AnchorMax: {x: 0.22800002, y: 0.23458543}
-  m_AnchoredPosition: {x: 480, y: 14.740967}
+  m_AnchoredPosition: {x: 479.99997, y: 14.740967}
   m_SizeDelta: {x: 27.750427, y: -11.5}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &299837905
@@ -339761,11 +339777,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi (4)
+      value: Lurking
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Lurking
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Lurking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -354769,11 +354793,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi (10)
+      value: Lurking
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Lurking
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Lurking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -374655,11 +374687,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi (3)
+      value: Lurking
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Lurking
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Lurking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -378629,11 +378669,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi (1)
+      value: Lurking
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Lurking
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Lurking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -381350,11 +381398,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi (6)
+      value: Lurking
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Lurking
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Lurking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -382502,11 +382558,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi (7)
+      value: Runner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Runner
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Runner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -386271,11 +386335,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi (2)
+      value: Lurking
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Lurking
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Lurking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -399432,11 +399504,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi (5)
+      value: Lurking
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Lurking
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Lurking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -456690,11 +456770,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_Name
-      value: Zumbi
+      value: Lurking
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909598968836443370, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: m_TagString
+      value: Lurking
       objectReference: {fileID: 0}
     - target: {fileID: 8272671490027692353, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402892185331743034, guid: cfa87a894e4f67e46927e8631c65f855, type: 3}
+      propertyPath: nomeSprite
+      value: Lurking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
