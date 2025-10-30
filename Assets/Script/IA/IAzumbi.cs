@@ -319,6 +319,15 @@ public class IAzumbi : MonoBehaviour
             case estadoInimigo.ATACANDO:
                 velocidade = 0;
 
+                if (CompareTag("Runner"))
+                {
+                    foreach (GameObject o in armas)
+                    {
+                        if (o.TryGetComponent<SpriteRenderer>(out SpriteRenderer sr))
+                            sr.enabled = false;
+                    }
+                }        
+
                 if (podeAtacar && !atacando)
                 {
                     atacando = true;
