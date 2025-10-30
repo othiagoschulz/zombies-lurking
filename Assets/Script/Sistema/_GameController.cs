@@ -250,7 +250,7 @@ public class _GameController : MonoBehaviour
         if (!morto && qtdBandagens >= 1)
         {
             qtdBandagens -= 1;
-            vidaAtual += 2;
+            vidaAtual += 1;
             if (vidaAtual > vidaMaxima)
             {
                 vidaAtual = vidaMaxima;
