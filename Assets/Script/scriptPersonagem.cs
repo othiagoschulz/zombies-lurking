@@ -95,6 +95,9 @@ public class scriptPersonagem : MonoBehaviour
 
     void Update()
     {
+        if (_GameController.instance != null && _GameController.instance.bloqueioTotal)
+            return; 
+
         AnimatorStateInfo current = animacaoPersonagem.GetCurrentAnimatorStateInfo(0);
         if (emDano)
         {

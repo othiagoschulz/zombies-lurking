@@ -32,6 +32,9 @@ public class pauseScript : MonoBehaviour
 
     void Update()
     {
+        if (_GameController.instance != null && _GameController.instance.bloqueioTotal)
+            return; 
+
         if (Input.GetKeyDown(KeyCode.Escape) && estadoAtual != maquinaEstado.INVENTARIO)
         {   //VERIFICA SE A TECLA "ESQ" FOI CLICADA
             if (pause)

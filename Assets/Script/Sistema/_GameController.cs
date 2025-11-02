@@ -79,6 +79,9 @@ public class _GameController : MonoBehaviour
     public Button botaoReset;
     public TextMeshProUGUI textoPiscar;
     public bool morto = false;
+    public bool bloqueioTotal = false; // para bloquear todas as ações do jogador
+
+    public static _GameController instance;
 
     void Start()
     {
@@ -86,7 +89,7 @@ public class _GameController : MonoBehaviour
         transicao = FindObjectOfType(typeof(transicao)) as transicao;
         pauseScript = FindObjectOfType(typeof(pauseScript)) as pauseScript;
         invScript = FindObjectOfType(typeof(invScript)) as invScript;
-        scriptPersonagem = FindObjectOfType(typeof(scriptPersonagem)) as scriptPersonagem;        
+        scriptPersonagem = FindObjectOfType(typeof(scriptPersonagem)) as scriptPersonagem;
 
         if (FindObjectsOfType<_GameController>().Length > 1)
         {
@@ -170,10 +173,10 @@ public class _GameController : MonoBehaviour
                 }
 
                 invScript.carregarInv();
-            }      
+            }
 
             SalvareCarregar.dadosCarregados = null;
-        }        
+        }
     }
 
     void Update()
@@ -211,7 +214,7 @@ public class _GameController : MonoBehaviour
     public void validarArma()
     {
         if (idClasseArma[idArma] != idClasse[idPersonagem])
-        {     
+        {
             idArma = idArmaInicial;
         }
     }
@@ -235,7 +238,7 @@ public class _GameController : MonoBehaviour
             idArmaAtual = itemInfo.idItem;
 
         usarItemArma(idArmaAtual);
-    
+
 
         pauseScript.voltarAoJogo();
     }
@@ -247,15 +250,16 @@ public class _GameController : MonoBehaviour
 
     public void usarBandagem()
     {
-        if (!morto && qtdBandagens >= 1)
+        if (morto || bloqueioTotal || qtdBandagens < 1)
+            return;
+            
+        qtdBandagens -= 1;
+        vidaAtual += 1;
+        if (vidaAtual > vidaMaxima)
         {
-            qtdBandagens -= 1;
-            vidaAtual += 1;
-            if (vidaAtual > vidaMaxima)
-            {
-                vidaAtual = vidaMaxima;
-            }
-        }
+            vidaAtual = vidaMaxima;
+        } 
+        
     }
 
     public string textoFormatado(string frase)
@@ -334,6 +338,20 @@ public class _GameController : MonoBehaviour
 
         Time.timeScale = 0f;
 
+        // Bloqueia inputs do personagem
+        bloqueioTotal = true;
+        scriptPersonagem.enabled = false; // opcional, mas garante que o personagem não se mova
+
+        // Bloqueia todos os outros CanvasGroups, exceto o painel de vitória
+        foreach (CanvasGroup cgHud in FindObjectsOfType<CanvasGroup>())
+        {
+            if (cgHud.gameObject != painelVitoria)
+            {
+                cgHud.blocksRaycasts = false;
+                cgHud.interactable = false;
+            }
+        } 
+
         painelVitoria.SetActive(true);
 
         CanvasGroup cg = painelVitoria.GetComponent<CanvasGroup>();
@@ -367,9 +385,9 @@ public class _GameController : MonoBehaviour
         vidaAtual = vidaMaxima;
         idArmaAtual = idArmaInicial;
 
-        painelFimdeJogo.SetActive(false);    
+        painelFimdeJogo.SetActive(false);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void PiscarTexto()
@@ -400,4 +418,12 @@ public class _GameController : MonoBehaviour
         int segundos = Mathf.FloorToInt(tempo % 60f);
         return string.Format("{0:00}:{1:00}", minutos, segundos);
     }
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this; // define essa instância como a principal
+        else
+            Destroy(gameObject); // garante que só exista uma instância
+    } 
 }
