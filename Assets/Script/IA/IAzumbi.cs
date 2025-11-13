@@ -68,7 +68,10 @@ public class IAzumbi : MonoBehaviour
 
         if (olhandoEsquerda == true)
         {
-            flip();
+            if (!levandoDano)
+            {
+                flip();
+            }
         }
         mudarEstado(estadoInimigoInicial);
 
@@ -94,7 +97,7 @@ public class IAzumbi : MonoBehaviour
             {
                 mudarEstado(estadoInimigo.ALERTA);
             }
-            else if (hitPersonagemTras)
+            else if (!levandoDano && hitPersonagemTras)
             {
                 flip();
                 mudarEstado(estadoInimigo.ALERTA);
@@ -217,6 +220,7 @@ public class IAzumbi : MonoBehaviour
 
     public void flip()
     {
+        if (levandoDano) return;
         olhandoEsquerda = !olhandoEsquerda; //INVERTE O VALOR DA VARIAVEL BOLEANA
         float x = transform.localScale.x;
         x *= -1; //INVERTE O SINAL DO SCALE X
@@ -230,14 +234,17 @@ public class IAzumbi : MonoBehaviour
     IEnumerator parado()
     {
         yield return new WaitForSeconds(tempoParado);
-        flip();
+        if (!levandoDano) flip();
         mudarEstado(estadoInimigo.PATRULHA);
-    }
+    } 
 
     IEnumerator recuar()
     {
         yield return new WaitForSeconds(tempoRecuo);
-        flip();
+        if (!levandoDano)
+        {
+            flip();
+        }
         mudarEstado(estadoInimigo.ALERTA);
     }
 
