@@ -262,11 +262,11 @@ public class controleDanoInimigo : MonoBehaviour
     {
         yield return new WaitForSeconds(0.4f); // tempo do stun do dano
         z.podeAtacar = true;
-    } 
+    }
 
     IEnumerator invulneravel()      //SISTEMA DE INVULNERABILIDADE, TROCA A OPACIDADE DO INIMIGO AO RECEBER DANO
     {
-
+        if (morto) yield break; // se morreu, não faz nada
         IAzumbi ia = GetComponent<IAzumbi>();
         ia.levandoDano = true;
 
@@ -282,5 +282,15 @@ public class controleDanoInimigo : MonoBehaviour
 
         verDano = false;                    //A VARIAVEL VERDANO RECEBE FALSO PARA QUE O INIMIGO POSSA RECEBER OUTRO DANO
         ia.levandoDano = false;
+
+        float dist = Vector3.Distance(transform.position, scriptPersonagem.transform.position);
+        if (dist <= ia.distanciaAtaque && ia.podeAtacar)
+        {
+            ia.mudarEstado(estadoInimigo.ATACANDO); // força o ataque de volta
+        }
+        else if (dist <= ia.distanciaVerPersonagem)
+        {
+            ia.mudarEstado(estadoInimigo.ALERTA);
+        } 
     }
 }
