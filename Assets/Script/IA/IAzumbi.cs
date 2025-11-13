@@ -120,10 +120,26 @@ public class IAzumbi : MonoBehaviour
             RaycastHit2D hitObstaculo = Physics2D.Raycast(transform.position, dir, distanciaMudarRota, layerObstaculo);
             if (hitObstaculo == true)
             {
-                mudarEstado(estadoInimigo.PARADO);
-                return; // evita continuar o código e cair
+                // Mantém em ALERTA, mas impede avanço (velocidade = 0)
+                velocidade = 0;
             }
-        }
+            else
+            {
+                velocidade = velocidadeBase * 2;
+            }
+
+            // Resto do código de ALERTA normalmente...
+            Vector3 posPlayer = scriptPersonagem.transform.position;
+            float dist = Vector3.Distance(transform.position, scriptPersonagem.transform.position);
+
+            // ... sua lógica de ataque etc
+            // ...
+            if (dist >= distanciaSairAlerta)
+            {
+                atacando = false;
+                mudarEstado(estadoInimigo.PARADO);
+            }
+        } 
 
         if (!levandoDano && estadoInimigoAtual != estadoInimigo.ATACANDO)
         {
