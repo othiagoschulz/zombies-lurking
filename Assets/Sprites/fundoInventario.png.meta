@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 524deab7f50be3d41acb2f3692713ad4
+guid: 8836435e0f1e1ad449926071e4e73ae5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8520098365385408392
-    second: fundo cinza_0
+      213: 18188276891227992
+    second: fundoInventario_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fundo cinza_0
+      name: fundoInventario_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 626
-        height: 417
+        y: 22
+        width: 900
+        height: 558
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88ffe2862587d3670800000000000000
-      internalID: 8520098365385408392
+      spriteID: 8579d27342e904000800000000000000
+      internalID: 18188276891227992
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fundo cinza_0: 8520098365385408392
+      fundoInventario_0: 18188276891227992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
