@@ -2,8 +2,8 @@
 	<arma atributo="nome">
 		<armas>
 			
-			<a>Sword A</a>
-			<a>Sword B</a>
+			<a>Wooden Sword</a>
+			<a>Iron Sword</a>
 			<a>Sword C</a>
 			<a>Sword D</a>
 			<a>Sword E</a>
@@ -12,7 +12,7 @@
 			<a>Sword H</a>
 			<a>Sword I</a>
 			<a>Sword J</a>
-			<a>Ax A</a>
+			<a>Iron Ax</a>
 			<a>Ax B</a>
 			<a>Ax C</a>
 			<a>Ax D</a>
@@ -119,4 +119,24 @@
 			<a>0</a>
 		</armas>
 	</arma>	
+
+	<arma atributo="descricao">
+		<armas>
+			<a>A rudimentary weapon hastily crafted. Though fragile, it is silent and lightweight, ideal for those still learning to survive. Perfect for eliminating isolated zombies without drawing attention.</a>
+			<a>A blade forged with purpose. The tempered metal ensures more precise and lasting blows. Balanced and reliable, it's the choice of experienced survivors who know how to value every confrontation.</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Brutality in weapon form. Its heavy blade shatters bones and skulls with a single, precise blow. Slow, but devastating – when it hits, no zombie can withstand it. For those who prefer efficiency over speed.</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+		</armas>
+	</arma>
 </Armas>

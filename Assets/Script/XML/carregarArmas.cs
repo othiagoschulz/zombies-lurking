@@ -18,6 +18,8 @@ public class carregarArmas : MonoBehaviour
     public List<int> danoMaxArma;
     public List<int> tipoDano;
 
+    public List<string> descricaoArma;  //DESCRICAO DA ARMA
+
     public List<Sprite> spriteArmas1;        //SPRITE DE ARMAS 1
     public List<Sprite> spriteArmas2;        //SPRITE DE ARMAS 2
     public List<Sprite> spriteArmas3;        //SPRITE DE ARMAS 3
@@ -114,6 +116,10 @@ public class carregarArmas : MonoBehaviour
                     case "tipoDano":
                         tipoDano.Add(int.Parse(a.InnerText));
                         break;
+
+                    case "descricao":
+                        descricaoArma.Add(a.InnerText);
+                        break;
                 }
             }
         }
@@ -136,6 +142,8 @@ public class carregarArmas : MonoBehaviour
         _GameController.danoMaximo = danoMaxArma;
         _GameController.tipoDanoArma = tipoDano;
         _GameController.imgInventario = iconeArma;
+
+        _GameController.descricaoArma = descricaoArma;
 
         _GameController.spriteArmas1 = spriteArmas1;
         _GameController.spriteArmas2 = spriteArmas2;

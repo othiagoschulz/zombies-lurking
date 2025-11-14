@@ -2,8 +2,8 @@
 	<arma atributo="nome">
 		<armas>
 			
-			<a>EspadaA</a>
-			<a>EspadaB</a>
+			<a>Espada de Madeira</a>
+			<a>Espada de Ferro</a>
 			<a>EspadaC</a>
 			<a>EspadaD</a>
 			<a>EspadaE</a>
@@ -12,7 +12,7 @@
 			<a>EspadaH</a>
 			<a>EspadaI</a>
 			<a>EspadaJ</a>
-			<a>MachadoA</a>
+			<a>Machado de Ferro</a>
 			<a>MachadoB</a>
 			<a>MachadoC</a>
 			<a>MachadoD</a>
@@ -119,4 +119,24 @@
 			<a>0</a>
 		</armas>
 	</arma>	
+
+	<arma atributo="descricao">
+		<armas>
+			<a>Uma arma rudimentar esculpida às pressas. Embora frágil, é silenciosa e leve, ideal para quem ainda está aprendendo a sobreviver. Perfeita para eliminar zumbis isolados sem chamar atenção.</a>
+			<a>Uma lâmina forjada com propósito. O metal temperado garante golpes mais precisos e duradouros. Equilibrada e confiável, é a escolha de sobreviventes experientes que sabem valorizar cada confronto.</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Brutalidade em forma de arma. Sua lâmina pesada quebra ossos e crânios com um único golpe certeiro. Lenta, mas devastadora - quando acerta, não há zumbi que resiste. Para quem prefere eficiência à velocidade.</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+			<a>Descrição temporária</a>
+		</armas>
+	</arma>
 </Armas>

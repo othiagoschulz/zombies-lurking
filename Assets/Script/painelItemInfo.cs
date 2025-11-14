@@ -15,6 +15,7 @@ public class painelItemInfo : MonoBehaviour
     public Image imgItem;
     public TMP_Text nomeItem;
     public TMP_Text danoItem;
+    public TMP_Text descricaoItem;
     public Button btnEquipar;
     public Button btnExcluir;
 
@@ -36,6 +37,8 @@ public class painelItemInfo : MonoBehaviour
         int danoMin = _GameController.danoMinimo[idArma];
         int danoMax = _GameController.danoMaximo[idArma];
         danoItem.text = "Dano: " + danoMin.ToString() + "-" + danoMax.ToString() + " / " + tipoDano;
+
+        descricaoItem.text = _GameController.descricaoArma[idArma];
 
         if (idSlot == 0)
         {

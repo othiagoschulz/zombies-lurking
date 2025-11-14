@@ -47,6 +47,7 @@ public class _GameController : MonoBehaviour
     public List<int> danoMinimo;
     public List<int> danoMaximo;
     public List<int> tipoDanoArma;
+    public List<string> descricaoArma;
 
     [Header("Primeiro elemento de cada painel")]
     public Button primeiroPauseMenu;
