@@ -162,29 +162,16 @@ public class IAzumbi : MonoBehaviour
 
             RaycastHit2D hitVisao = Physics2D.Raycast(transform.position, dir, distanciaAtaque, layerPersonagem);
 
-            if (dist <= distanciaAtaque)
-            {
-                // força ataque se o player estiver MUITO próximo (mesmo se o trigger falhar)
+            // NO FINAL do if (estadoInimigoAtual == estadoInimigo.ALERTA) dentro do Update()  
+            Vector3 toPlayer = scriptPersonagem.transform.position - transform.position;
+            dist = toPlayer.magnitude;
+            float dirDot = Vector2.Dot(dir.normalized, toPlayer.normalized);
 
-                if (!atacando && podeAtacar)
-                {
+            if (dist <= distanciaAtaque && dirDot > 0.5f) {
+                if (!atacando && podeAtacar) {                    
                     mudarEstado(estadoInimigo.ATACANDO);
                     atacando = true;
                 }
-            }
-            else if (dist <= distanciaVerPersonagem * 0.35f)
-            {
-                // player muito perto mas sem raycast (caso de ultrapassar o raio de visão)                
-                if (!atacando && podeAtacar)
-                {
-                    mudarEstado(estadoInimigo.ATACANDO);
-                    atacando = true;
-                }
-            }
-            else if (dist >= distanciaSairAlerta)
-            {
-                atacando = false;
-                mudarEstado(estadoInimigo.PARADO);
             }
         }
         if (estadoInimigoAtual != estadoInimigo.ALERTA)
@@ -277,26 +264,7 @@ public class IAzumbi : MonoBehaviour
     
         // garante que o player ainda está perto e pode receber dano
         float dist = Vector3.Distance(transform.position, scriptPersonagem.transform.position);
-
-        if (dist <= distanciaAtaque && podeAtacar && !levandoDano)
-        {
-            // 1) vetor da posição do zumbi até o player
-            Vector2 direcaoParaPlayer = (scriptPersonagem.transform.position - transform.position).normalized;
-
-            // 2) vetor de frente do zumbi (você já usa 'dir' pra isso)
-            Vector2 frenteDoZumbi = dir.normalized; // dir já é (1,0) ou (-1,0), mas normalizar não custa
-
-            // 3) produto escalar
-            float dot = Vector2.Dot(frenteDoZumbi, direcaoParaPlayer);
-
-            // 4) limite do "cone" de ataque
-            // dot > 0     → qualquer coisa na frente (180° na frente do zumbi)
-            // dot > 0.5f  → mais estreito (~60° na frente)
-            if (dot > 0.5f)
-            {
-                AtacarPlayer();
-            }
-        }    
+ 
     }
 
     IEnumerator cooldownAtaque()
@@ -307,21 +275,6 @@ public class IAzumbi : MonoBehaviour
         yield return new WaitForSeconds(tempoEntreAtaques);
 
         podeAtacar = true;
-
-        // Se o player ainda estiver por perto, reataca automaticamente
-        float dist = Vector3.Distance(transform.position, scriptPersonagem.transform.position);
-        if (dist <= distanciaAtaque && !levandoDano)
-        {
-            mudarEstado(estadoInimigo.ATACANDO); // <- força novo ataque
-        }
-        else if (dist <= distanciaVerPersonagem)
-        {
-            mudarEstado(estadoInimigo.ALERTA);
-        }
-        else
-        {
-            mudarEstado(estadoInimigo.PARADO);
-        }
     } 
 
     public void mudarEstado(estadoInimigo novoEstado)
@@ -353,6 +306,7 @@ public class IAzumbi : MonoBehaviour
 
             case estadoInimigo.ATACANDO:
                 velocidade = 0;
+                rBody.linearVelocity = Vector2.zero;
 
                 if (CompareTag("Runner"))
                 {

@@ -288,9 +288,5 @@ public class controleDanoInimigo : MonoBehaviour
         {
             ia.mudarEstado(estadoInimigo.ATACANDO); // força o ataque de volta
         }
-        else if (dist <= ia.distanciaVerPersonagem)
-        {
-            ia.mudarEstado(estadoInimigo.ALERTA);
-        } 
     }
 }
