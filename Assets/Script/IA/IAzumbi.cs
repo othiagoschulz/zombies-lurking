@@ -274,17 +274,29 @@ public class IAzumbi : MonoBehaviour
             atacando = false;
             yield break;
         }
-
+    
         // garante que o player ainda está perto e pode receber dano
         float dist = Vector3.Distance(transform.position, scriptPersonagem.transform.position);
+
         if (dist <= distanciaAtaque && podeAtacar && !levandoDano)
         {
-            AtacarPlayer();
-        }
+            // 1) vetor da posição do zumbi até o player
+            Vector2 direcaoParaPlayer = (scriptPersonagem.transform.position - transform.position).normalized;
 
-        // finaliza o ataque
-        yield return new WaitForSeconds(0.4f);
-        atacando = false;
+            // 2) vetor de frente do zumbi (você já usa 'dir' pra isso)
+            Vector2 frenteDoZumbi = dir.normalized; // dir já é (1,0) ou (-1,0), mas normalizar não custa
+
+            // 3) produto escalar
+            float dot = Vector2.Dot(frenteDoZumbi, direcaoParaPlayer);
+
+            // 4) limite do "cone" de ataque
+            // dot > 0     → qualquer coisa na frente (180° na frente do zumbi)
+            // dot > 0.5f  → mais estreito (~60° na frente)
+            if (dot > 0.5f)
+            {
+                AtacarPlayer();
+            }
+        }    
     }
 
     IEnumerator cooldownAtaque()
