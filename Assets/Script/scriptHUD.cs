@@ -9,9 +9,6 @@ public class scriptHUD : MonoBehaviour
     private scriptPersonagem scriptPersonagem;   //VARIAVEL PARA INSTANCIAR O SCRIPT DO PERSONAGEM
     public Image[] barraVida;      //BARRA VIDA
     public Sprite metade, inteiro;
-    public GameObject painelFlecha;
-    public TMP_Text qtdFlechas;
-    public Image iconFlecha;
     public TMP_Text qtdBandagemHud;
     void Start()
     {

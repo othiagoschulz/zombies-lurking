@@ -9,8 +9,8 @@ public class invScript : MonoBehaviour
     private _GameController _GameController;
     public Button[] slot;
     public Image[]  iconeItem;
-    public TextMeshProUGUI  qtdBandagem, qtdFlechaN, qtdFlechaF, qtdFlechaO;
-    public int      qBandagem, qFlechaN, qFlechaF, qFlechaO;
+    public TextMeshProUGUI  qtdBandagem;
+    public int      qBandagem;
     public List<GameObject> itemInv;
     public List<GameObject> itemCarregado;
     void Start(){

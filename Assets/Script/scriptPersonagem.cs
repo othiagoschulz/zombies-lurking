@@ -36,8 +36,7 @@ public class scriptPersonagem : MonoBehaviour
     //SISTEMA DAS ARMAS
     public int idArma;
     public int idArmaAtual;
-    public GameObject[] armas, arcos, flechaArco;
-    public Transform spawnFlecha;
+    public GameObject[] armas;
     public GameObject balaoAlerta;
 
     //INVULNERABILIDADE APÓS SOFRER DANO
@@ -64,11 +63,6 @@ public class scriptPersonagem : MonoBehaviour
 
         foreach (GameObject o in armas)
         {         //DESABILITA AS ARMAS QUANDO O JOGO INICIAR, PARA NÃO ACONTECER BUGS
-            o.SetActive(false);
-        }
-
-        foreach (GameObject o in arcos)
-        {         //DESABILITA OS ARCOS QUANDO O JOGO INICIAR, PARA NÃO ACONTECER BUGS
             o.SetActive(false);
         }
     }
@@ -105,8 +99,7 @@ public class scriptPersonagem : MonoBehaviour
             if (atacando)
             {
                 atacando = false;
-                foreach (GameObject o in armas) o.SetActive(false);
-                foreach (GameObject o in arcos) o.SetActive(false);
+                foreach (GameObject o in armas) o.SetActive(false);                
             }
             // Quando sair da animação de dano, restaura velocidade
             if (!current.IsTag("Dano"))
@@ -257,14 +250,6 @@ public class scriptPersonagem : MonoBehaviour
         armas[id].SetActive(true);
     }
 
-    void controleArco(int id)
-    {
-        foreach (GameObject o in arcos)
-        {
-            o.SetActive(false);
-        }
-        arcos[id].SetActive(true);
-    }
     void OnTriggerEnter2D(Collider2D col)
     {      //FUNÇÃO QUE DESTROI A MOEDA QUANDO O PERSONAGEM COLIDE COM ELA
         switch (col.gameObject.tag)
@@ -307,14 +292,6 @@ public class scriptPersonagem : MonoBehaviour
                 tempArmaInfo.danoMin = _GameController.danoMinimo[idArma];
                 tempArmaInfo.danoMax = _GameController.danoMaximo[idArma];
                 tempArmaInfo.tipoDano = _GameController.tipoDanoArma[idArma];
-
-                break;
-
-            case 1: //ARCO
-
-                arcos[0].GetComponent<SpriteRenderer>().sprite = _GameController.spriteArmas1[id];
-                arcos[1].GetComponent<SpriteRenderer>().sprite = _GameController.spriteArmas2[id];
-                arcos[2].GetComponent<SpriteRenderer>().sprite = _GameController.spriteArmas3[id];
 
                 break;
         }
