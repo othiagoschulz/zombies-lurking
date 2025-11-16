@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using UnityEngine.UI;
 public class menuScript : MonoBehaviour
 {
     private SalvareCarregar SalvareCarregar;
     public VideoPlayer videoPlayer;
     public GameObject menuInicial, menuOpcoes, rawImage;
     public AudioSource efeitoSonoro;
+    public Button botaoCarregar;
     void Start()
     {
         SalvareCarregar = FindObjectOfType<SalvareCarregar>();
         rawImage.SetActive(false);
         menuOpcoes.SetActive(false);
         menuInicial.SetActive(false);
+
+        if (SalvareCarregar != null && SalvareCarregar.SaveCompletado())
+        {
+            if (botaoCarregar != null)
+                botaoCarregar.interactable = false; // DESABILITA O BOTÃO
+        }
     }
 
     void Update()

@@ -369,6 +369,10 @@ public class _GameController : MonoBehaviour
 
         if (tempoFinalTXT != null)
             tempoFinalTXT.text = FormatarTempo(tempoPartida);
+
+        SalvareCarregar salvamento = FindObjectOfType<SalvareCarregar>();
+        if (salvamento != null)
+            salvamento.SalvarComoCompletado();
     }
 
     public void ResetarCena()

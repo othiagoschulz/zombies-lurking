@@ -81,6 +81,62 @@ public class SalvareCarregar : MonoBehaviour
         }
     }
 
+    public void SalvarComoCompletado()
+    {        
+        if(_GameController == null)
+        {            
+            return;
+        }
+
+        SaveData data = new SaveData();
+        data.idPersonagem = _GameController.idPersonagemAtual;
+        data.moeda = _GameController.moeda;
+        data.idioma = _GameController.idioma;
+        data.qtdBandagens = _GameController.qtdBandagens;
+        data.vidaAtual = _GameController.vidaAtual;
+        data.idArmaAtual = _GameController.idArmaAtual;
+        data.zumbisMortosIDs = _GameController.zumbisMortosIDs;
+        data.bausAbertosIDs = _GameController.bausAbertosIDs;
+        data.tempoPartida = _GameController.tempoPartida;
+        data.jogoZerado = true; // MARCA COMO COMPLETADO
+
+        if (_GameController != null && _GameController.GetComponent<invScript>() != null)
+        {
+            invScript inv = _GameController.GetComponent<invScript>();
+            foreach (GameObject item in inv.itemInv)
+            {
+                if (item == null) continue;
+                item itemInfo = item.GetComponent<item>();
+                if (itemInfo != null)
+                    data.inventarioIDs.Add(itemInfo.idItem);
+            }
+        }
+
+        if (scriptPersonagem != null)
+        {
+            Vector3 pos = scriptPersonagem.transform.position;
+            data.posX = pos.x;
+            data.posY = pos.y;
+            data.posZ = pos.z;
+        }
+
+        string json = JsonUtility.ToJson(data);
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        Debug.Log("Jogo completado salvo!");
+    }
+
+    public bool SaveCompletado()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+            return data.jogoZerado;
+        }
+        return false;
+    }
+
     [System.Serializable]
     public class SaveData
     {
@@ -94,6 +150,7 @@ public class SalvareCarregar : MonoBehaviour
         public List<int> bausAbertosIDs = new List<int>(); // IDs de todos os baús abertos
         public List<int> inventarioIDs = new List<int>();
         public float tempoPartida;
+        public bool jogoZerado = false;
 
         //posição do personagem
         public float posX;

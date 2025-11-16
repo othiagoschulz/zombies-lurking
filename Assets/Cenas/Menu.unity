@@ -2687,6 +2687,7 @@ MonoBehaviour:
   menuOpcoes: {fileID: 1550954862}
   rawImage: {fileID: 250289969}
   efeitoSonoro: {fileID: 826437491}
+  botaoCarregar: {fileID: 1637394323}
 --- !u!4 &1245212779
 Transform:
   m_ObjectHideFlags: 0
