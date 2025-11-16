@@ -5,7 +5,7 @@ public class porta : MonoBehaviour
 {
     private transicao transicao;
     public Transform tPersonagem;   //TRANSFORM DO PLAYER
-
+    public GameObject escuridaoCaverna;
     public Transform destino;
 
     void Start()
@@ -23,6 +23,7 @@ public class porta : MonoBehaviour
         transicao.fadeIn();
         yield return new WaitWhile(() => transicao.fume.color.a < 0.9f);
         tPersonagem.position = destino.position;
+        if (escuridaoCaverna != null) escuridaoCaverna.SetActive(true); // ativa a escuridão
         yield return new WaitForSeconds(0.3f);
         transicao.fadeOut();    
     }
