@@ -16,6 +16,15 @@ public class invScript : MonoBehaviour
     void Start(){
         _GameController = FindObjectOfType(typeof(_GameController))as _GameController;
 
+        qBandagem = _GameController.qtdBandagens;
+        qtdBandagem.text = "x " + qBandagem.ToString();
+    }
+
+    void Update()
+    {
+        // Sempre sincroniza com o GameController
+        qBandagem = _GameController.qtdBandagens;
+        qtdBandagem.text = "x " +qBandagem.ToString();
     }
 
     public void carregarInv(){
@@ -46,6 +55,11 @@ public class invScript : MonoBehaviour
 
             s++;
         }
+    }
+
+    public void AtualizarQuantidadeBandagens(int quantidade){
+        qBandagem = quantidade;
+        qtdBandagem.text = "x " + qBandagem.ToString();
     }
 
     public void limparItensCarregados(){

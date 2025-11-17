@@ -261,6 +261,7 @@ public class _GameController : MonoBehaviour
             vidaAtual = vidaMaxima;
         } 
         
+        invScript.AtualizarQuantidadeBandagens(qtdBandagens);
     }
 
     public string textoFormatado(string frase)
