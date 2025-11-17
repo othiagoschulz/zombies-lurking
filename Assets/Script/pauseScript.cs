@@ -18,6 +18,7 @@ public class pauseScript : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject inventario;
     public GameObject infoInventario;
+    public GameObject opcoes;
     private bool pause = false;     //VARIAVEL PARA VERIFICAR SE O JOGO ESTA PAUSADO
     private _GameController _GameController;
     void Start()
@@ -26,8 +27,9 @@ public class pauseScript : MonoBehaviour
         _GameController = FindObjectOfType(typeof(_GameController)) as _GameController;
         Time.timeScale = 1f;
         EsconderPauseMenu();        //FAZ COM QUE O JOGO INICIE SEM ESTAR PAUSADO
-        inventario.SetActive(false);    //
+        inventario.SetActive(false);    
         infoInventario.SetActive(false);
+        opcoes.SetActive(false);
     }
 
     void Update()
@@ -35,15 +37,37 @@ public class pauseScript : MonoBehaviour
         if (_GameController.instance != null && _GameController.instance.bloqueioTotal)
             return; 
 
-        if (Input.GetKeyDown(KeyCode.Escape) && estadoAtual != maquinaEstado.INVENTARIO)
-        {   //VERIFICA SE A TECLA "ESQ" FOI CLICADA
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Verifica se o painel de informações do inventário está aberto
+            if (infoInventario.activeSelf)
+            {
+                fecharInfoInventario();
+                return;
+            }
+            
+            // Verifica se o painel de opções está aberto
+            if (opcoes.activeSelf)
+            {
+                fecharOpcoes();
+                return;
+            }
+            
+            // Verifica se o inventário está aberto
+            if (estadoAtual == maquinaEstado.INVENTARIO)
+            {
+                voltarInventario();
+                return;
+            }
+            
+            // Se nenhum painel específico está aberto, controla o menu de pause normal
             if (pause)
             {
-                EsconderPauseMenu();   //SE O JOGO ESTIVER PAUSADO, ELE DESPAUSA
+                EsconderPauseMenu();
             }
             else
             {
-                MostrarPauseMenu();    //SE O JOGO NÃO ESTIVER PAUSADO, ELE PAUSA
+                MostrarPauseMenu();
             }
         }
     }
@@ -123,6 +147,18 @@ public class pauseScript : MonoBehaviour
     public void fecharInfoInventario()
     {
         infoInventario.SetActive(false);
+    }
+
+    public void abrirOpcoes()
+    {
+        pauseMenu.SetActive(false);
+        opcoes.SetActive(true);        
+    }
+
+    public void fecharOpcoes()
+    {
+        opcoes.SetActive(false);
+        pauseMenu.SetActive(true);        
     }
 
     public void voltarAoJogo()
