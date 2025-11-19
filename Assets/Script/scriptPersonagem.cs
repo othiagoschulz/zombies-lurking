@@ -298,6 +298,32 @@ public class scriptPersonagem : MonoBehaviour
         }
     }
 
+    public void TocarSomAtaque()
+    {
+        if (_AudioController.instance == null) return;
+        
+        // Mapeia o ID da arma para o nome do som correspondente
+        string nomeSom = "";
+        
+        switch (_GameController.idArmaAtual)
+        {
+            case 0:
+                nomeSom = "ataqueEspada1";
+                break;
+            case 1:
+                nomeSom = "ataqueEspada2";
+                break;
+            case 10:
+                nomeSom = "ataqueMachado";
+                break;
+            default:
+                Debug.LogWarning("Nenhum som configurado para arma ID: " + _GameController.idArmaAtual);
+                return;
+        }
+        
+        _AudioController.instance.TocarSom(nomeSom);
+    }
+
     public void trocarArma(int id)
     {
         idArma = id;
