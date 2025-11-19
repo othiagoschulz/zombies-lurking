@@ -22,7 +22,8 @@ public class scriptPersonagem : MonoBehaviour
     public float forcaPulo;              //INDICA A FORÇA APLICADA PARA GERAR O PULO DO PERSONAGEM
     public bool olhandoEsquerda;        //FAZ O PERSONAGEM OLHAR PARA O OUTRO LADO
     public bool Chao;                   //INDICA SE O PERSONAGEM ESTÁ PISANDO NO CHÃO
-    public bool atacando;               //INDICA SE O PERSONAGEM ESTÁ EFETUANDO UM ATAQUE
+    public bool atacando;               //INDICA SE O PERSONAGEM ESTÁ EFETUANDO UM ATAQUE    
+    private bool estavaNoAr = false;
     public int idAnimacao;             //INDICA O ID DA ANIMAÇÃO
     private float h, v;
     public Collider2D emPe, agachado;         //COLISOR EM PÉ E AGACHADO
@@ -42,10 +43,13 @@ public class scriptPersonagem : MonoBehaviour
     //INVULNERABILIDADE APÓS SOFRER DANO
     public bool invulneravel = false;
     public float tempoInvulneravel = 0.8f; // tempo entre danos
-
+    
+    //NOMES DOS SONS
     private string[] nomesPassos = { "passo1", "passo4", "passo8" };
     private string[] nomesDanos = { "danoPersonagem1", "danoPersonagem2", "danoPersonagem3" };
     private string[] nomesPulos = { "puloPersonagem1", "puloPersonagem2", "puloPersonagem3" };
+
+
 
     void Start()
     {
@@ -87,6 +91,19 @@ public class scriptPersonagem : MonoBehaviour
         Chao = Physics2D.OverlapCircle(chaoCheck.position, 0.02f, oQueEChao);
         personagemRb.linearVelocity = (new Vector2(h * velocidade, personagemRb.linearVelocity.y));
         interagir();
+
+        // Detecta quando o personagem aterrissa no chão
+        if (Chao && estavaNoAr)
+        {
+            // Toca som de aterrissagem (passo aleatório)
+            if (_AudioController.instance != null)
+            {
+                _AudioController.instance.TocarSomAleatorio(nomesPassos);
+            }
+        }
+
+        // Atualiza o estado anterior
+        estavaNoAr = !Chao;
 
     }
 
