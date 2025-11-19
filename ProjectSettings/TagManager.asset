@@ -12,6 +12,7 @@ TagManager:
   - bauFloresta
   - Lurking
   - Runner
+  - grama
   layers:
   - Default
   - TransparentFX

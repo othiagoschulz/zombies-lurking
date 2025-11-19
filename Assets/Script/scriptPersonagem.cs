@@ -43,6 +43,7 @@ public class scriptPersonagem : MonoBehaviour
     public bool invulneravel = false;
     public float tempoInvulneravel = 0.8f; // tempo entre danos
 
+    private string[] nomesPassos = { "passo1", "passo4", "passo8" };
 
     void Start()
     {
@@ -141,9 +142,13 @@ public class scriptPersonagem : MonoBehaviour
             if (Chao) h = 0;
         }
         else if (h != 0)
+        {
             idAnimacao = 1;
+        }
         else
+        {
             idAnimacao = 0;
+        }      
 
         // Ataques    
         if (Input.GetButtonDown("Fire1") && v >= 0 && !atacando)
@@ -257,6 +262,14 @@ public class scriptPersonagem : MonoBehaviour
             case "coletavel":
                 col.gameObject.SendMessage("coletar", SendMessageOptions.DontRequireReceiver);
                 break;
+        }
+    }
+
+    public void TocarPasso()
+    {
+        if (_AudioController.instance != null)
+        {
+            _AudioController.instance.TocarSomAleatorio(nomesPassos);
         }
     }
 
