@@ -44,6 +44,8 @@ public class scriptPersonagem : MonoBehaviour
     public float tempoInvulneravel = 0.8f; // tempo entre danos
 
     private string[] nomesPassos = { "passo1", "passo4", "passo8" };
+    private string[] nomesDanos = { "danoPersonagem1", "danoPersonagem2", "danoPersonagem3" };
+    private string[] nomesPulos = { "puloPersonagem1", "puloPersonagem2", "puloPersonagem3" };
 
     void Start()
     {
@@ -166,7 +168,14 @@ public class scriptPersonagem : MonoBehaviour
 
         // Pulo
         if (Input.GetButtonDown("Jump") && Chao)
-            personagemRb.AddForce(new Vector2(0, forcaPulo));
+        {
+            personagemRb.AddForce(new Vector2(0, forcaPulo));   
+
+            if (_AudioController.instance != null)
+            _AudioController.instance.TocarSomAleatorio(nomesPulos);  
+        }       
+        
+
 
         // Troca de armas
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -270,6 +279,22 @@ public class scriptPersonagem : MonoBehaviour
         if (_AudioController.instance != null)
         {
             _AudioController.instance.TocarSomAleatorio(nomesPassos);
+        }
+    }
+
+    public void TocarDano()
+    {
+        if (_AudioController.instance != null)
+        {
+            _AudioController.instance.TocarSomAleatorio(nomesDanos);
+        }
+    }
+
+    public void TocarPulo()
+    {
+        if (_AudioController.instance != null)
+        {
+            _AudioController.instance.TocarSomAleatorio(nomesPulos);
         }
     }
 
