@@ -48,6 +48,7 @@ public class scriptPersonagem : MonoBehaviour
     private string[] nomesPassos = { "passo1", "passo4", "passo8" };
     private string[] nomesDanos = { "danoPersonagem1", "danoPersonagem2", "danoPersonagem3" };
     private string[] nomesPulos = { "puloPersonagem1", "puloPersonagem2", "puloPersonagem3" };
+    private string nomeMorte = "mortePersonagem";
 
 
 
@@ -339,6 +340,14 @@ public class scriptPersonagem : MonoBehaviour
         }
         
         _AudioController.instance.TocarSom(nomeSom);
+    }
+
+    public void TocarMorte()
+    {
+        if (_AudioController.instance != null)
+        {
+            _AudioController.instance.TocarSom(nomeMorte);
+        }
     }
 
     public void trocarArma(int id)
