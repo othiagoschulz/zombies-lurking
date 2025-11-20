@@ -319,7 +319,10 @@ public class _GameController : MonoBehaviour
 
     IEnumerator FimdeJogo()
     {
-        yield return new WaitForSeconds(1f);
+        CameraController camFollow = Camera.main.GetComponent<CameraController>();
+        if (camFollow) camFollow.enabled = false;
+
+        yield return CameraDeathEffect();      
 
         painelVitoria.SetActive(false);
         painelFimdeJogo.SetActive(true);
@@ -374,6 +377,25 @@ public class _GameController : MonoBehaviour
         SalvareCarregar salvamento = FindObjectOfType<SalvareCarregar>();
         if (salvamento != null)
             salvamento.SalvarComoCompletado();
+    }
+
+    IEnumerator CameraDeathEffect()
+    {
+        Camera cam = Camera.main;
+        float startZoom = cam.orthographicSize;
+        float targetZoom = startZoom * 0.5f; // Ajuste conforme seu gosto
+        Vector3 startPos = cam.transform.position;
+        Vector3 targetPos = scriptPersonagem.transform.position + new Vector3(0, 0, -10);
+
+        float duration = 1f; // tempo do efeito
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.unscaledDeltaTime / duration;
+            cam.orthographicSize = Mathf.Lerp(startZoom, targetZoom, t);
+            cam.transform.position = Vector3.Lerp(startPos, targetPos, t);
+            yield return null;
+        }
     }
 
     public void ResetarCena()
