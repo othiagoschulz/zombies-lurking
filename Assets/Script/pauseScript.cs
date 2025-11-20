@@ -19,6 +19,11 @@ public class pauseScript : MonoBehaviour
     public GameObject inventario;
     public GameObject infoInventario;
     public GameObject opcoes;
+
+    public GameObject painelVolume;
+    public GameObject painelControles;
+    public GameObject painelGraficos;
+
     private bool pause = false;     //VARIAVEL PARA VERIFICAR SE O JOGO ESTA PAUSADO
     private _GameController _GameController;
     void Start()
@@ -30,6 +35,10 @@ public class pauseScript : MonoBehaviour
         inventario.SetActive(false);    
         infoInventario.SetActive(false);
         opcoes.SetActive(false);
+
+        painelVolume.SetActive(false);
+        painelControles.SetActive(false);
+        painelGraficos.SetActive(false);
     }
 
     void Update()
@@ -39,6 +48,25 @@ public class pauseScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+
+            if (painelVolume.activeSelf)
+            {
+                fecharPainelVolume();
+                return;
+            }
+            
+            if (painelControles.activeSelf)
+            {
+                fecharPainelControles();
+                return;
+            }
+            
+            if (painelGraficos.activeSelf)
+            {
+                fecharPainelGraficos();
+                return;
+            }
+
             // Verifica se o painel de informações do inventário está aberto
             if (infoInventario.activeSelf)
             {
@@ -179,5 +207,47 @@ public class pauseScript : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         mudarEstado(maquinaEstado.GAMEPLAY);
+    }
+
+    private void DesativarTodosPaineis()
+    {
+        painelVolume.SetActive(false);
+        painelControles.SetActive(false);        
+        painelGraficos.SetActive(false);
+    }
+
+    public void abrirPainelVolume()
+    {        
+        DesativarTodosPaineis();
+        painelVolume.SetActive(true);
+    }
+    
+    public void fecharPainelVolume()
+    {
+        painelVolume.SetActive(false);        
+    }
+    
+    // PAINEL CONTROLES
+    public void abrirPainelControles()
+    {        
+        DesativarTodosPaineis();
+        painelControles.SetActive(true);
+    }
+    
+    public void fecharPainelControles()
+    {
+        painelControles.SetActive(false);        
+    }
+    
+    // PAINEL GRAFICOS
+    public void abrirPainelGraficos()
+    {        
+        DesativarTodosPaineis();
+        painelGraficos.SetActive(true);
+    }
+    
+    public void fecharPainelGraficos()
+    {
+        painelGraficos.SetActive(false);
     }
 }

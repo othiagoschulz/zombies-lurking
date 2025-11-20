@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 [System.Serializable]
 
 public class Som
@@ -14,8 +15,16 @@ public class Som
 
     public bool loop = false; //Define se o áudio deve ser reproduzido em loop
 
+    public tipoAudio tipoAudio = tipoAudio.EfeitoSonoro;
+
     [HideInInspector]   //Esconde o AudioSource no inspector
     public AudioSource source;
+}
+
+public enum tipoAudio 
+{ 
+    Musica, 
+    EfeitoSonoro 
 }
 
 public class _AudioController : MonoBehaviour
@@ -24,6 +33,9 @@ public class _AudioController : MonoBehaviour
 
     public Som[] musicas;       //lista de todas as musicas do jogo
     public Som[] efeitosSonoros; //lista de todos os efeitos sonoros do jogo
+
+    public AudioMixerGroup grupoMusica;
+    public AudioMixerGroup grupoEfeitosSonoros;
 
     void Awake()
     {
@@ -48,6 +60,8 @@ public class _AudioController : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+
+            s.source.outputAudioMixerGroup = grupoMusica;
         }
 
         foreach (Som s in efeitosSonoros)
@@ -58,6 +72,8 @@ public class _AudioController : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+
+            s.source.outputAudioMixerGroup = grupoEfeitosSonoros;
         }
     }
 
