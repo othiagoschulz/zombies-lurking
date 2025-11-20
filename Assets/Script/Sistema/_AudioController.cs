@@ -37,6 +37,11 @@ public class _AudioController : MonoBehaviour
     public AudioMixerGroup grupoMusica;
     public AudioMixerGroup grupoEfeitosSonoros;
 
+    public AudioSource musicSource;
+
+    public AudioClip musicaFaseInicial;
+    public AudioClip musicaFloresta;
+
     void Awake()
     {
         // Implementa o padrão Singleton
@@ -79,7 +84,7 @@ public class _AudioController : MonoBehaviour
 
     void Start()
     {
-        TocarSom("MusicaFundo");
+        TocarMusica(musicaFaseInicial);
     }
 
     public void TocarSom(string nome)
@@ -98,6 +103,16 @@ public class _AudioController : MonoBehaviour
         }
 
         s.source.Play();
+    }
+
+    public void TocarMusica(AudioClip novaMusica)
+    {
+        if (musicSource.clip == novaMusica && musicSource.isPlaying)
+            return; // já está tocando
+
+        musicSource.Stop();
+        musicSource.clip = novaMusica;
+        musicSource.Play();
     }
 
     public void TocarSomAleatorio(string[] nomes)

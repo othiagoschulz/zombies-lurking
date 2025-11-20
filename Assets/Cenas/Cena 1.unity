@@ -97352,7 +97352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &132278101
 RectTransform:
   m_ObjectHideFlags: 0
@@ -346572,7 +346572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &522769210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -383541,22 +383541,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicas:
-  - nome: Musica1
+  - nome: musicaFundo
     clip: {fileID: 8300000, guid: a76b4a1493dab6d429281329e3d0ca4b, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     tipoAudio: 1
     source: {fileID: 0}
-  - nome: Musica2
+  - nome: musicaFloresta
     clip: {fileID: 8300000, guid: 79497523326cc5f448ad6a00b8c6a46a, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    tipoAudio: 1
-    source: {fileID: 0}
-  - nome: 
-    clip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
@@ -400124,7 +400117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.2016967}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39, y: 2.299985}
+  m_AnchoredPosition: {x: -39, y: 2.2999868}
   m_SizeDelta: {x: 26.5, y: 21.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1751191523
@@ -408677,7 +408670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.2016967}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39.16, y: 2.299985}
+  m_AnchoredPosition: {x: -39.16, y: 2.2999868}
   m_SizeDelta: {x: 26.5, y: 21.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966519503

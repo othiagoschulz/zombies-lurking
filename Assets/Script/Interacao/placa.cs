@@ -25,6 +25,7 @@ public class placa : MonoBehaviour
         tPersonagem.position = destino.position;
         yield return new WaitForSeconds(0.3f);
         transicao.fadeOut();
+        _AudioController.instance.TocarMusica(_AudioController.instance.musicaFloresta);
 
         placaA.SetActive(false);
         placaB.SetActive(false);                
