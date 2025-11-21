@@ -322,7 +322,7 @@ public class _GameController : MonoBehaviour
         CameraController camFollow = Camera.main.GetComponent<CameraController>();
         if (camFollow) camFollow.enabled = false;
 
-        yield return CameraDeathEffect();      
+        yield return EfeitoMorteCamera();      
 
         painelVitoria.SetActive(false);
         painelFimdeJogo.SetActive(true);
@@ -341,11 +341,12 @@ public class _GameController : MonoBehaviour
         jogoFinalizado = true;
         yield return new WaitForSeconds(1f);
 
-        Time.timeScale = 0f;
-
-        // Bloqueia inputs do personagem
+        yield return StartCoroutine(EfeitoVitoriaCamera());
+        
+        painelVitoria.SetActive(true);
         bloqueioTotal = true;
         scriptPersonagem.enabled = false; // opcional, mas garante que o personagem não se mova
+        Time.timeScale = 0f;
 
         // Bloqueia todos os outros CanvasGroups, exceto o painel de vitória
         foreach (CanvasGroup cgHud in FindObjectsOfType<CanvasGroup>())
@@ -355,9 +356,7 @@ public class _GameController : MonoBehaviour
                 cgHud.blocksRaycasts = false;
                 cgHud.interactable = false;
             }
-        } 
-
-        painelVitoria.SetActive(true);
+        }   
 
         CanvasGroup cg = painelVitoria.GetComponent<CanvasGroup>();
         if (cg == null) cg = painelVitoria.AddComponent<CanvasGroup>();
@@ -379,7 +378,7 @@ public class _GameController : MonoBehaviour
             salvamento.SalvarComoCompletado();
     }
 
-    IEnumerator CameraDeathEffect()
+    IEnumerator EfeitoMorteCamera()
     {
         Camera cam = Camera.main;
         float startZoom = cam.orthographicSize;
@@ -396,6 +395,39 @@ public class _GameController : MonoBehaviour
             cam.transform.position = Vector3.Lerp(startPos, targetPos, t);
             yield return null;
         }
+    }
+
+    IEnumerator EfeitoVitoriaCamera()
+    {
+        // EFFECT: zoom animado na posição do personagem
+        Camera cam = Camera.main;
+        float startZoom = cam.orthographicSize;
+        float targetZoom = startZoom * 0.5f;
+        Vector3 startPos = cam.transform.position;
+        Vector3 targetPos = scriptPersonagem.transform.position + new Vector3(0, 0, -10);
+
+        float duration = 1f;
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.unscaledDeltaTime / duration;
+            cam.orthographicSize = Mathf.Lerp(startZoom, targetZoom, t);
+            cam.transform.position = Vector3.Lerp(startPos, targetPos, t);
+            yield return null;
+        }
+
+        // Travar a câmera
+        CameraController camFollow = cam.GetComponent<CameraController>();
+        if (camFollow) camFollow.enabled = false;
+
+        // Movimento: personagem anda automatizado
+        scriptPersonagem.IniciarAndarParaDireita();
+
+        float limiteX = cam.transform.position.x + cam.orthographicSize * cam.aspect + 1f;
+        while (scriptPersonagem.transform.position.x < limiteX)
+        {
+            yield return null;
+        }
     }
 
     public void ResetarCena()

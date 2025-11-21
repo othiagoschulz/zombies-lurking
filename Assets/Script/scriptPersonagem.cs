@@ -50,6 +50,9 @@ public class scriptPersonagem : MonoBehaviour
     private string[] nomesPulos = { "puloPersonagem1", "puloPersonagem2", "puloPersonagem3" };
     private string nomeMorte = "mortePersonagem";
 
+    //EFEITO DA VITORIA
+    private bool andandoParaDireita = false;
+
 
 
     void Start()
@@ -76,7 +79,13 @@ public class scriptPersonagem : MonoBehaviour
     }
 
     void FixedUpdate()
-    {     //TAXA DE ATUALIZAÇÃO FIXA 0.02, CLASSE PARA CRIAR MOVIMENTOS FÍSICOS
+    {     
+        if (andandoParaDireita)
+        {
+            personagemRb.linearVelocity = new Vector2(1.5f, personagemRb.linearVelocity.y); // velocidade ajustada
+            return; 
+        }
+        
         if (emDano)
         {
             personagemRb.linearVelocity = Vector2.zero;
@@ -110,6 +119,13 @@ public class scriptPersonagem : MonoBehaviour
 
     void Update()
     {
+        if (andandoParaDireita)
+        {            
+            idAnimacao = 1;
+            animacaoPersonagem.SetInteger("idAnimacao", idAnimacao);
+            return;
+        }
+
         if (_GameController.instance != null && _GameController.instance.bloqueioTotal)
             return; 
 
@@ -290,6 +306,13 @@ public class scriptPersonagem : MonoBehaviour
                 col.gameObject.SendMessage("coletar", SendMessageOptions.DontRequireReceiver);
                 break;
         }
+    }
+
+    public void IniciarAndarParaDireita()
+    {
+        andandoParaDireita = true;
+        idAnimacao = 1;
+        animacaoPersonagem.SetInteger("idAnimacao", idAnimacao);
     }
 
     public void TocarPasso()
